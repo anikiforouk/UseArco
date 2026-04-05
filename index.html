@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>useArco — Coming Soon</title>
+  <meta name="description" content="Connect with the right people to build your next project or startup. useArco is launching soon." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0a0a0f;
+      --surface: #13131a;
+      --border: #1e1e2e;
+      --accent: #6c63ff;
+      --accent-light: #8b85ff;
+      --accent-glow: rgba(108, 99, 255, 0.15);
+      --text: #f0f0f5;
+      --muted: #8888aa;
+      --white: #ffffff;
+    }
+
+    html, body {
+      height: 100%;
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* Animated background */
+    body::before {
+      content: '';
+      position: fixed;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(ellipse at 60% 40%, rgba(108,99,255,0.08) 0%, transparent 60%),
+                  radial-gradient(ellipse at 20% 80%, rgba(99,179,255,0.05) 0%, transparent 50%);
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1.5rem;
+      text-align: center;
+    }
+
+    /* Logo / Arc mark */
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-bottom: 3rem;
+    }
+
+    .logo-mark {
+      width: 40px;
+      height: 40px;
+    }
+
+    .logo-text {
+      font-size: 1.4rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: var(--white);
+    }
+
+    .logo-text span {
+      color: var(--accent-light);
+    }
+
+    /* Badge */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: var(--accent-glow);
+      border: 1px solid rgba(108,99,255,0.3);
+      color: var(--accent-light);
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.35rem 0.9rem;
+      border-radius: 100px;
+      margin-bottom: 1.8rem;
+    }
+
+    .badge-dot {
+      width: 6px;
+      height: 6px;
+      background: var(--accent);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.8); }
+    }
+
+    /* Headline */
+    h1 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      margin-bottom: 1.2rem;
+      max-width: 700px;
+    }
+
+    h1 em {
+      font-style: normal;
+      background: linear-gradient(135deg, var(--accent-light), #a78bfa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* Subheadline */
+    .sub {
+      font-size: clamp(1rem, 2vw, 1.15rem);
+      color: var(--muted);
+      line-height: 1.7;
+      max-width: 520px;
+      margin-bottom: 2.8rem;
+      font-weight: 400;
+    }
+
+    /* Email form */
+    .form-wrap {
+      width: 100%;
+      max-width: 460px;
+      margin-bottom: 1rem;
+    }
+
+    /* MailerLite embed will go here — placeholder styled to match */
+    .ml-form-placeholder {
+      display: flex;
+      gap: 0.6rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 0.5rem 0.5rem 0.5rem 1rem;
+      align-items: center;
+    }
+
+    .ml-form-placeholder input {
+      flex: 1;
+      background: transparent;
+      border: none;
+      outline: none;
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+    }
+
+    .ml-form-placeholder input::placeholder {
+      color: var(--muted);
+    }
+
+    .ml-form-placeholder button {
+      background: var(--accent);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 0.7rem 1.3rem;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background 0.2s, transform 0.1s;
+    }
+
+    .ml-form-placeholder button:hover {
+      background: var(--accent-light);
+      transform: translateY(-1px);
+    }
+
+    .form-note {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-bottom: 3rem;
+    }
+
+    /* Features row */
+    .features {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      max-width: 640px;
+      margin-bottom: 4rem;
+    }
+
+    .feature {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .feature-icon {
+      font-size: 1rem;
+    }
+
+    /* Footer */
+    footer {
+      font-size: 0.78rem;
+      color: #444460;
+    }
+
+    /* Arc SVG animation */
+    .arc-graphic {
+      position: fixed;
+      bottom: -80px;
+      right: -80px;
+      opacity: 0.06;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    @media (max-width: 480px) {
+      .ml-form-placeholder {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .ml-form-placeholder button {
+        text-align: center;
+      }
+      .features {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Background arc graphic -->
+  <svg class="arc-graphic" width="600" height="600" viewBox="0 0 600 600" fill="none">
+    <circle cx="300" cy="300" r="280" stroke="#6c63ff" stroke-width="2"/>
+    <circle cx="300" cy="300" r="200" stroke="#6c63ff" stroke-width="1.5"/>
+    <circle cx="300" cy="300" r="120" stroke="#6c63ff" stroke-width="1"/>
+  </svg>
+
+  <div class="container">
+
+    <!-- Logo -->
+    <div class="logo">
+      <svg class="logo-mark" viewBox="0 0 40 40" fill="none">
+        <path d="M8 32 Q20 8 32 32" stroke="#6c63ff" stroke-width="3" stroke-linecap="round" fill="none"/>
+        <circle cx="20" cy="18" r="4" fill="#6c63ff" opacity="0.8"/>
+        <circle cx="8" cy="32" r="2.5" fill="#8b85ff"/>
+        <circle cx="32" cy="32" r="2.5" fill="#8b85ff"/>
+      </svg>
+      <div class="logo-text">use<span>Arco</span></div>
+    </div>
+
+    <!-- Badge -->
+    <div class="badge">
+      <span class="badge-dot"></span>
+      Launching Soon
+    </div>
+
+    <!-- Headline -->
+    <h1>Find the right people.<br /><em>Build something real.</em></h1>
+
+    <!-- Sub -->
+    <p class="sub">
+      useArco connects project owners, co-founders, and collaborators — so you spend less time searching and more time building.
+    </p>
+
+    <!-- Email Form (replace inner div with MailerLite embed code) -->
+    <div class="form-wrap">
+      <!-- MAILERLITE_EMBED_START -->
+      <div class="ml-form-placeholder">
+        <input type="email" placeholder="Enter your email address" />
+        <button type="button">Get Early Access</button>
+      </div>
+      <!-- MAILERLITE_EMBED_END -->
+    </div>
+    <p class="form-note">No spam. Just your early access invite when we launch.</p>
+
+    <!-- Features -->
+    <div class="features">
+      <div class="feature"><span class="feature-icon">🔗</span> Connect with builders</div>
+      <div class="feature"><span class="feature-icon">🚀</span> Launch faster together</div>
+      <div class="feature"><span class="feature-icon">🎯</span> Find the right fit</div>
+      <div class="feature"><span class="feature-icon">🔒</span> Verified profiles</div>
+    </div>
+
+    <!-- Footer -->
+    <footer>© 2026 useArco. All rights reserved.</footer>
+
+  </div>
+
+</body>
+</html>
