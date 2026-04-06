@@ -32,8 +32,8 @@
   #mlb2-39481464.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow input::-moz-placeholder{color:#9ca3af}
   #mlb2-39481464.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow input:-ms-input-placeholder{color:#9ca3af}
   #mlb2-39481464.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit{margin:10px 0 0 0;float:left;width:100%}
-  #mlb2-39481464.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button{background-color:#1d4ed8!important;border:none!important;border-radius:8px!important;box-shadow:none!important;color:#ffffff!important;cursor:pointer;font-family:Inter,sans-serif!important;font-size:0.95rem!important;font-weight:600!important;line-height:21px!important;height:auto;padding:13px!important;width:100%!important;box-sizing:border-box!important;transition:background 0.2s,transform 0.1s}
-  #mlb2-39481464.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button:hover{background-color:#1e3a8a!important;transform:translateY(-1px)}
+  #mlb2-39481464.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button{background-color:#b45309!important;border:none!important;border-radius:8px!important;box-shadow:none!important;color:#ffffff!important;cursor:pointer;font-family:Inter,sans-serif!important;font-size:0.95rem!important;font-weight:600!important;line-height:21px!important;height:auto;padding:13px!important;width:100%!important;box-sizing:border-box!important;transition:background 0.2s,transform 0.1s}
+  #mlb2-39481464.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button:hover{background-color:#92400e!important;transform:translateY(-1px)}
   #mlb2-39481464.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button.loading{display:none}
   #mlb2-39481464.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody{padding:20px 0}
   #mlb2-39481464.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent h4{color:#0a0a0a!important;font-family:Inter,sans-serif;font-size:1.1rem;font-weight:600;text-align:center}
@@ -49,9 +49,9 @@
       --bg: #ffffff;
       --surface: #f9fafb;
       --border: #e5e7eb;
-      --blue: #1d4ed8;
-      --blue-dark: #1e3a8a;
-      --blue-light: #dbeafe;
+      --yellow: #b45309;
+      --yellow-dark: #92400e;
+      --yellow-light: #fef3c7;
       --text: #0a0a0a;
       --muted: #6b7280;
       --white: #ffffff;
@@ -73,7 +73,7 @@
       left: 0;
       right: 0;
       height: 4px;
-      background: linear-gradient(90deg, #1e3a8a, #2563eb, #60a5fa);
+      background: linear-gradient(90deg, #92400e, #d97706, #fbbf24);
       z-index: 100;
     }
 
@@ -85,7 +85,7 @@
       left: 0;
       right: 0;
       height: 50vh;
-      background: linear-gradient(180deg, #eff6ff 0%, #ffffff 100%);
+      background: linear-gradient(180deg, #fffbeb 0%, #ffffff 100%);
       z-index: 0;
       pointer-events: none;
     }
@@ -123,7 +123,7 @@
     }
 
     .logo-text span {
-      color: var(--blue);
+      color: var(--yellow);
     }
 
     /* Badge */
@@ -131,9 +131,9 @@
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      background: var(--blue-light);
-      border: 1px solid #bfdbfe;
-      color: var(--blue-dark);
+      background: var(--yellow-light);
+      border: 1px solid #fde68a;
+      color: var(--yellow-dark);
       font-size: 0.72rem;
       font-weight: 600;
       letter-spacing: 0.09em;
@@ -156,7 +156,7 @@
 
     h1 em {
       font-style: normal;
-      background: linear-gradient(135deg, #1d4ed8, #3b82f6);
+      background: linear-gradient(135deg, #b45309, #f59e0b);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -236,10 +236,10 @@
     <!-- Logo -->
     <div class="logo">
       <svg class="logo-mark" viewBox="0 0 40 40" fill="none">
-        <path d="M8 32 Q20 8 32 32" stroke="#1d4ed8" stroke-width="3" stroke-linecap="round" fill="none"/>
-        <circle cx="20" cy="18" r="4" fill="#1d4ed8" opacity="0.85"/>
-        <circle cx="8" cy="32" r="2.5" fill="#3b82f6"/>
-        <circle cx="32" cy="32" r="2.5" fill="#3b82f6"/>
+        <path d="M8 32 Q20 8 32 32" stroke="#b45309" stroke-width="3" stroke-linecap="round" fill="none"/>
+        <circle cx="20" cy="18" r="4" fill="#b45309" opacity="0.85"/>
+        <circle cx="8" cy="32" r="2.5" fill="#f59e0b"/>
+        <circle cx="32" cy="32" r="2.5" fill="#f59e0b"/>
       </svg>
       <div class="logo-text">use<span>Arco</span></div>
     </div>
