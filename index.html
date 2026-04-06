@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>useArco — Coming Soon</title>
+  <title>useArco - Coming Soon</title>
   <meta name="description" content="Connect with the right people to build your next project or startup. useArco is launching soon." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -66,12 +66,12 @@
     }
 
     .logo-mark {
-      width: 40px;
-      height: 40px;
+      width: 52px;
+      height: 52px;
     }
 
     .logo-text {
-      font-size: 1.4rem;
+      font-size: 1.75rem;
       font-weight: 600;
       letter-spacing: -0.02em;
       color: var(--white);
@@ -146,7 +146,7 @@
       margin-bottom: 1rem;
     }
 
-    /* MailerLite embed will go here — placeholder styled to match */
+    /* MailerLite embed will go here - placeholder styled to match */
     .ml-form-placeholder {
       display: flex;
       gap: 0.6rem;
@@ -212,10 +212,13 @@
       gap: 0.5rem;
       font-size: 0.85rem;
       color: var(--muted);
+      letter-spacing: 0.01em;
     }
-
-    .feature-icon {
-      font-size: 1rem;
+    .feature + .feature::before {
+      content: '·';
+      color: var(--border);
+      margin-right: 0.5rem;
+      font-size: 1.2rem;
     }
 
     /* Footer */
@@ -306,8 +309,7 @@
 
     <!-- Badge -->
     <div class="badge">
-      <span class="badge-dot"></span>
-      Launching Soon
+      <span class="badge-dot"></span> Early Access
     </div>
 
     <!-- Headline -->
@@ -315,7 +317,7 @@
 
     <!-- Sub -->
     <p class="sub">
-      useArco connects project owners, co-founders, and collaborators — so you spend less time searching and more time building.
+      useArco connects project owners, co-founders, and collaborators - so you spend less time searching and more time building.
     </p>
 
     <!-- Email Form (replace inner div with MailerLite embed code) -->
@@ -335,7 +337,7 @@
                 </div>
                 <input type="hidden" name="ml-submit" value="1">
                 <div class="ml-form-embedSubmit">
-                  <button type="submit" class="primary">Get Early Access</button>
+                  <button type="submit" class="primary">Get <span class="badge-dot"></span> Early Access</button>
                   <button disabled="disabled" style="display:none;" type="button" class="loading">
                     <div class="ml-form-embedSubmitLoad"></div>
                     <span class="sr-only">Loading...</span>
@@ -354,14 +356,14 @@
         </div>
       </div>
     </div>
-    <p class="form-note">No spam. Just your early access invite when we launch.</p>
+    <p class="form-note">We will reach out when access opens up.</p>
 
     <!-- Features -->
     <div class="features">
-      <div class="feature"><span class="feature-icon">🔗</span> Connect with builders</div>
-      <div class="feature"><span class="feature-icon">🚀</span> Launch faster together</div>
-      <div class="feature"><span class="feature-icon">🎯</span> Find the right fit</div>
-      <div class="feature"><span class="feature-icon">🔒</span> Verified profiles</div>
+      <div class="feature">Connect with builders</div>
+      <div class="feature">Launch faster together</div>
+      <div class="feature">Find the right fit</div>
+      <div class="feature">Verified profiles</div>
     </div>
 
     <!-- Footer -->
