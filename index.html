@@ -3,13 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>useArco - Find the right people. Build something real.</title>
-  <meta name="description" content="Connect with co-founders, collaborators, and project partners. useArco is launching soon." />
+  <title>useArco - Find the right co-founder. Build something real.</title>
+  <meta name="description" content="The platform where founders, developers and builders find each other and build real projects. Not a job board. Not LinkedIn." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
 
-  <!-- MailerLite styles -->
   <style type="text/css">@import url("https://assets.mlcdn.com/fonts.css?version=1775043");</style>
   <style type="text/css">
   .ml-form-embedSubmitLoad{display:inline-block;width:20px;height:20px}
@@ -21,8 +20,6 @@
   #mlb2-39481464.ml-form-embedContainer .ml-form-embedWrapper.embedForm{max-width:460px;width:100%}
   #mlb2-39481464.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody{padding:0}
   #mlb2-39481464.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent{margin:0 0 16px 0;text-align:center}
-  #mlb2-39481464.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent h4{color:#0a0a0a!important;font-family:Inter,sans-serif;font-size:1.1rem;font-weight:600;margin:0 0 6px 0;text-align:center}
-  #mlb2-39481464.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent p{color:#6b7280!important;font-family:Inter,sans-serif;font-size:0.88rem;font-weight:400;line-height:1.6;margin:0;text-align:center}
   #mlb2-39481464.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody form{margin:0;width:100%}
   #mlb2-39481464.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-formContent{margin:0 0 10px 0;width:100%}
   #mlb2-39481464.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow{margin:0 0 10px 0;width:100%}
@@ -32,101 +29,50 @@
   #mlb2-39481464.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow input::-moz-placeholder{color:#9ca3af}
   #mlb2-39481464.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow input:-ms-input-placeholder{color:#9ca3af}
   #mlb2-39481464.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit{margin:10px 0 0 0;float:left;width:100%}
-  #mlb2-39481464.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button{background-color:#b45309!important;border:none!important;border-radius:8px!important;box-shadow:none!important;color:#ffffff!important;cursor:pointer;font-family:Inter,sans-serif!important;font-size:0.95rem!important;font-weight:600!important;line-height:21px!important;height:auto;padding:13px!important;width:100%!important;box-sizing:border-box!important;transition:background 0.2s,transform 0.1s}
+  #mlb2-39481464.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button{background-color:#b45309!important;border:none!important;border-radius:8px!important;box-shadow:none!important;color:#ffffff!important;cursor:pointer;font-family:Inter,sans-serif!important;font-size:1rem!important;font-weight:700!important;line-height:21px!important;height:auto;padding:15px!important;width:100%!important;box-sizing:border-box!important;transition:background 0.2s,transform 0.1s}
   #mlb2-39481464.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button:hover{background-color:#92400e!important;transform:translateY(-1px)}
   #mlb2-39481464.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button.loading{display:none}
   #mlb2-39481464.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody{padding:20px 0}
   #mlb2-39481464.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent h4{color:#0a0a0a!important;font-family:Inter,sans-serif;font-size:1.1rem;font-weight:600;text-align:center}
   #mlb2-39481464.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent p{color:#6b7280!important;font-family:Inter,sans-serif;font-size:0.88rem;text-align:center}
   .ml-error input{border-color:red!important}
-  .ml-error .label-description,.ml-error label:first-child{color:#ff0000!important}
-
-    /* Social proof */
-    .social-proof {
-      text-align: center;
-      color: #d97706;
-      font-size: 0.85rem;
-      font-weight: 600;
-      letter-spacing: 0.03em;
-      margin: 18px 0 28px 0;
-      text-transform: uppercase;
-    }
-
-    /* Who it's for */
-    .who-for {
-      margin: 0 auto 36px auto;
-      max-width: 500px;
-      text-align: center;
-    }
-
-    .who-for-title {
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: #9ca3af;
-      margin-bottom: 10px;
-    }
-
-    .who-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      justify-content: center;
-    }
-
-    .who-tag {
-      background: rgba(217, 119, 6, 0.08);
-      border: 1px solid rgba(217, 119, 6, 0.25);
-      color: #d97706;
-      padding: 5px 14px;
-      border-radius: 99px;
-      font-size: 0.8rem;
-      font-weight: 500;
-    }
   </style>
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg: #ffffff;
-      --surface: #f9fafb;
-      --border: #e5e7eb;
-      --yellow: #b45309;
-      --yellow-dark: #92400e;
-      --yellow-light: #fef3c7;
+      --amber: #b45309;
+      --amber-dark: #92400e;
+      --amber-light: #fef3c7;
+      --amber-mid: #d97706;
       --text: #0a0a0a;
       --muted: #6b7280;
+      --border: #e5e7eb;
       --white: #ffffff;
     }
 
     html, body {
       height: 100%;
-      background: var(--bg);
+      background: #ffffff;
       color: var(--text);
       font-family: 'Inter', sans-serif;
       overflow-x: hidden;
     }
 
-    /* Subtle blue gradient top strip */
     body::before {
       content: '';
       position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
+      top: 0; left: 0; right: 0;
       height: 4px;
       background: linear-gradient(90deg, #92400e, #d97706, #fbbf24);
       z-index: 100;
     }
 
-    /* Very subtle blue tint in top background */
     body::after {
       content: '';
       position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
+      top: 0; left: 0; right: 0;
       height: 50vh;
       background: linear-gradient(180deg, #fffbeb 0%, #ffffff 100%);
       z-index: 0;
@@ -141,48 +87,59 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 4rem 1.5rem;
+      padding: 3rem 1.5rem 4rem;
       text-align: center;
     }
 
-    /* Logo */
     .logo {
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 3rem;
-    }
-
-    .logo-img {
-      width: 200px;
-      height: auto;
-    }
-
-    /* Badge */
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: var(--yellow-light);
-      border: 1px solid #fde68a;
-      color: var(--yellow-dark);
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 0.09em;
-      text-transform: uppercase;
-      padding: 0.3rem 0.85rem;
-      border-radius: 100px;
       margin-bottom: 2rem;
     }
 
-    /* Headline */
+    .logo-img {
+      width: 140px;
+      height: auto;
+    }
+
+    /* Urgency badge - ABOVE headline */
+    .urgency-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: var(--amber-light);
+      border: 1px solid #fde68a;
+      color: var(--amber-dark);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.35rem 1rem;
+      border-radius: 100px;
+      margin-bottom: 1.5rem;
+    }
+
+    .urgency-dot {
+      width: 7px;
+      height: 7px;
+      background: var(--amber);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+
     h1 {
-      font-size: clamp(2.2rem, 5.5vw, 3.8rem);
+      font-size: clamp(2rem, 5vw, 3.4rem);
       font-weight: 800;
       letter-spacing: -0.04em;
-      line-height: 1.1;
-      margin-bottom: 1.3rem;
-      max-width: 720px;
+      line-height: 1.12;
+      margin-bottom: 1rem;
+      max-width: 680px;
       color: var(--text);
     }
 
@@ -194,96 +151,100 @@
       background-clip: text;
     }
 
-    /* Subheadline */
     .sub {
-      font-size: clamp(1rem, 2vw, 1.15rem);
+      font-size: clamp(0.95rem, 2vw, 1.1rem);
       color: var(--muted);
-      line-height: 1.75;
-      max-width: 500px;
-      margin-bottom: 2.8rem;
+      line-height: 1.7;
+      max-width: 460px;
+      margin-bottom: 2rem;
       font-weight: 400;
     }
 
-    /* Email form */
+    /* How it works - 3 steps */
+    .how-it-works {
+      display: flex;
+      gap: 0;
+      justify-content: center;
+      align-items: flex-start;
+      max-width: 500px;
+      width: 100%;
+      margin-bottom: 2rem;
+    }
+
+    .step {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.4rem;
+      position: relative;
+    }
+
+    .step:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      top: 14px;
+      right: -8px;
+      width: 16px;
+      height: 2px;
+      background: var(--border);
+    }
+
+    .step-num {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--amber-light);
+      border: 1.5px solid var(--amber);
+      color: var(--amber);
+      font-size: 0.75rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .step-label {
+      font-size: 0.72rem;
+      color: var(--muted);
+      font-weight: 500;
+      line-height: 1.4;
+    }
+
     .form-wrap {
       width: 100%;
-      max-width: 440px;
-      margin-bottom: 1rem;
+      max-width: 420px;
+      margin-bottom: 0.75rem;
     }
 
     .form-note {
-      font-size: 0.78rem;
+      font-size: 0.76rem;
       color: #9ca3af;
-      margin-bottom: 3.5rem;
+      margin-bottom: 2.5rem;
     }
 
-    /* Features row */
-    .features {
-      display: flex;
-      gap: 2rem;
-      flex-wrap: wrap;
-      justify-content: center;
-      max-width: 600px;
-      margin-bottom: 4.5rem;
+    /* Divider */
+    .divider {
+      width: 40px;
+      height: 2px;
+      background: var(--border);
+      margin: 0 auto 2rem auto;
     }
 
-    .feature {
-      font-size: 0.82rem;
-      color: var(--muted);
-      letter-spacing: 0.02em;
-      font-weight: 500;
-    }
-
-    .feature + .feature::before {
-      content: '·';
-      color: #d1d5db;
-      margin-right: 0.5rem;
-      font-size: 1.2rem;
-      vertical-align: middle;
-    }
-
-    /* Footer */
-    footer {
-      font-size: 0.75rem;
-      color: #d1d5db;
-      letter-spacing: 0.03em;
-    }
-
-    @media (max-width: 480px) {
-      .features {
-        flex-direction: column;
-        gap: 0.75rem;
-        align-items: center;
-      }
-      .feature + .feature::before {
-        display: none;
-      }
-    }
-
-    /* Social proof */
-    .social-proof {
-      text-align: center;
-      color: #d97706;
-      font-size: 0.85rem;
-      font-weight: 600;
-      letter-spacing: 0.03em;
-      margin: 18px 0 28px 0;
-      text-transform: uppercase;
-    }
-
-    /* Who it's for */
+    /* Who its for */
     .who-for {
-      margin: 0 auto 36px auto;
+      margin: 0 auto 2.5rem auto;
       max-width: 500px;
       text-align: center;
     }
 
     .who-for-title {
-      font-size: 0.75rem;
+      font-size: 0.72rem;
       text-transform: uppercase;
       letter-spacing: 0.1em;
       color: #9ca3af;
-      margin-bottom: 10px;
+      margin-bottom: 0.75rem;
+      font-weight: 600;
     }
 
     .who-tags {
@@ -294,13 +255,48 @@
     }
 
     .who-tag {
-      background: rgba(217, 119, 6, 0.08);
-      border: 1px solid rgba(217, 119, 6, 0.25);
-      color: #d97706;
+      background: rgba(217, 119, 6, 0.07);
+      border: 1px solid rgba(217, 119, 6, 0.2);
+      color: var(--amber-mid);
       padding: 5px 14px;
       border-radius: 99px;
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       font-weight: 500;
+    }
+
+    /* Features */
+    .features {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      max-width: 560px;
+      margin-bottom: 3.5rem;
+    }
+
+    .feature {
+      font-size: 0.8rem;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .feature + .feature::before {
+      content: '·';
+      color: #d1d5db;
+      margin-right: 0.5rem;
+      font-size: 1.1rem;
+      vertical-align: middle;
+    }
+
+    footer {
+      font-size: 0.73rem;
+      color: #d1d5db;
+    }
+
+    @media (max-width: 480px) {
+      .how-it-works { gap: 0; }
+      .features { flex-direction: column; gap: 0.6rem; align-items: center; }
+      .feature + .feature::before { display: none; }
     }
   </style>
 </head>
@@ -308,19 +304,40 @@
 
   <div class="container">
 
-        <!-- Logo -->
+    <!-- Logo -->
     <div class="logo">
       <img src="usearco_logo.png" alt="useArco" class="logo-img" />
     </div>
 
+    <!-- Urgency badge -->
+    <div class="urgency-badge">
+      <span class="urgency-dot"></span>
+      Beta now open - limited spots
+    </div>
 
-    <!-- Headline -->
-    <h1>Find the right people.<br /><em>Build something real.</em></h1>
+    <!-- Headline - matches winning ad message -->
+    <h1>You have the idea.<br /><em>Finding the right person to build it with is the hard part.</em></h1>
 
     <!-- Sub -->
     <p class="sub">
-      The platform where founders, developers, designers and operators find each other - and build real projects together. Not a job board. Not LinkedIn.
+      useArco matches project owners with co-founders, developers and collaborators. No job boards. No cold DMs.
     </p>
+
+    <!-- How it works - 3 steps -->
+    <div class="how-it-works">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-label">Post your<br>project</div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-label">Get matched<br>with the right person</div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-label">Build<br>together</div>
+      </div>
+    </div>
 
     <!-- Email Form -->
     <div class="form-wrap">
@@ -332,13 +349,13 @@
                 <div class="ml-form-formContent">
                   <div class="ml-form-fieldRow ml-last-item">
                     <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
-                      <input aria-label="email" aria-required="true" type="email" class="form-control" data-inputmask="" name="fields[email]" placeholder="Enter your email address" autocomplete="email">
+                      <input aria-label="email" aria-required="true" type="email" class="form-control" data-inputmask="" name="fields[email]" placeholder="Enter your email to reserve your spot" autocomplete="email">
                     </div>
                   </div>
                 </div>
                 <input type="hidden" name="ml-submit" value="1">
                 <div class="ml-form-embedSubmit">
-                  <button type="submit" class="primary">Get Early Access</button>
+                  <button type="submit" class="primary">Reserve My Spot - It's Free</button>
                   <button disabled="disabled" style="display:none;" type="button" class="loading">
                     <div class="ml-form-embedSubmitLoad"></div>
                     <span class="sr-only">Loading...</span>
@@ -350,16 +367,16 @@
             <div class="ml-form-successBody row-success" style="display:none">
               <div class="ml-form-successContent">
                 <h4>You are on the list.</h4>
-                <p>We will be in touch soon. Welcome to the waitlist.</p>
+                <p>We will be in touch soon. Welcome aboard.</p>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <p class="form-note">Free during beta - limited early spots available.</p>
-    <!-- Social proof -->
-    <p class="social-proof">Join 50+ founders and builders already on the waitlist.</p>
+    <p class="form-note">Free during beta. No credit card. Cancel anytime.</p>
+
+    <div class="divider"></div>
 
     <!-- Who it's for -->
     <div class="who-for">
@@ -374,7 +391,6 @@
       </div>
     </div>
 
-
     <!-- Features -->
     <div class="features">
       <div class="feature">Post your project idea</div>
@@ -384,12 +400,10 @@
       <div class="feature">Verified profiles</div>
     </div>
 
-    <!-- Footer -->
     <footer>2026 useArco</footer>
 
   </div>
 
-  <!-- MailerLite scripts -->
   <script>
     function ml_webform_success_39481464() {
       var $ = ml_jQuery || jQuery;
