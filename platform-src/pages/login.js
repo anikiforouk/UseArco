@@ -34,6 +34,9 @@ export default function Login() {
       <div className="w-full max-w-md">
         <div className="card p-8">
           <div className="text-center mb-8">
+            <div className="flex justify-center mb-5">
+              <img src="/logo.png" alt="useArco" style={{ height: '48px', width: 'auto' }} />
+            </div>
             <h1 className="text-2xl font-bold mb-1" style={{ color: 'var(--text-primary)' }}>Welcome back</h1>
             <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>Log in to your useArco account</p>
           </div>
