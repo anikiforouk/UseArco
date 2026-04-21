@@ -64,9 +64,9 @@ export default function Dashboard() {
       <div className="flex gap-4 mb-8 border-b border-gray-200">
         {['projects', 'applications'].map(t => (
           <button key={t} onClick={() => setTab(t)}
-            className={pb-3 px-2 font-semibold capitalize transition-colors text-sm {
+            className={`pb-3 px-2 font-semibold capitalize transition-colors text-sm ${
               tab === t ? 'text-amber-600 border-b-2 border-amber-500' : 'text-gray-400 hover:text-gray-700'
-            }}>{t}</button>
+            `}>{t}</button>
         ))}
       </div>
 
