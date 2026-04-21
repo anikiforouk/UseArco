@@ -93,7 +93,7 @@ export default function Home() {
         <div className="bg-white border-b border-gray-100">
           <div className="max-w-6xl mx-auto px-4 py-12 text-center">
             <h1 className="text-4xl font-bold text-gray-900 mb-3">
-              Find your <span className="text-amber-500">co-founder</span> at {user.university.split(' ').slice(0,2).join(' ')}
+              Find your <span className="text-amber-500">co-founder</span> at {user.university?.split(' ')?.slice(0,2)?.join(' ') || 'your university'}
             </h1>
             <p className="text-gray-500 text-lg max-w-xl mx-auto mb-8">
               Browse projects from your university. Apply to collaborate. Build something real.

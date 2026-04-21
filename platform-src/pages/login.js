@@ -12,8 +12,16 @@ export default function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true); setError('');
+    // Read actual DOM values to handle browser autofill (Firefox/Chrome)
+    const emailVal = e.target.elements.email?.value || form.email;
+    const passwordVal = e.target.elements.password?.value || form.password;
+    if (!emailVal || !passwordVal) {
+      setError('Email and password are required.');
+      setLoading(false);
+      return;
+    }
     try {
-      const { data } = await api.post('/auth/login', form);
+      const { data } = await api.post('/auth/login', { email: emailVal, password: passwordVal });
       setToken(data.token);
       router.push('/dashboard');
     } catch (err) {

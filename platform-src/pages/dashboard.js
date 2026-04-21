@@ -43,7 +43,7 @@ export default function Dashboard() {
       <div className="flex items-center justify-between mb-8">
         <div>
           <h1 className="text-3xl font-bold text-gray-900">Welcome back, {user.name?.split(' ')[0]}</h1>
-          <p className="text-gray-500 mt-1 capitalize">{user.role} &middot; {user.university}</p>
+          <p className="text-gray-500 mt-1 capitalize">{user.role}{user.university ? ` · ${user.university}` : ''}</p>
         </div>
         <Link href="/projects/new" className="btn-primary">+ Post Project</Link>
       </div>
