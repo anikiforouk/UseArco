@@ -99,11 +99,11 @@ export default function Dashboard() {
                 <p className="font-semibold text-gray-900">{a.project?.title || 'Project'}</p>
                 <p className="text-gray-500 text-sm">{a.project?.category} - {a.project?.stage}</p>
               </div>
-              <span className={text-sm font-semibold px-3 py-1 rounded-full {
+              <span className={`text-sm font-semibold px-3 py-1 rounded-full ${
                 a.status === 'accepted' ? 'bg-green-100 text-green-700' :
                 a.status === 'rejected' ? 'bg-red-100 text-red-700' :
                 'bg-gray-100 text-gray-600'
-              }}>{a.status}</span>
+              `}>{a.status}</span>
             </div>
           ))}
         </div>
