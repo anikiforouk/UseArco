@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { removeToken } from '../lib/api';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
@@ -7,8 +8,8 @@ export default function Navbar({ user }) {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const logout = () => {
-    localStorage.removeItem('token');
-    localStorage.removeItem('user');
+    
+    removeToken();
     router.push('/login');
   };
 
