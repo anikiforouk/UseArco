@@ -1,14 +1,11 @@
-import { useState, useEffect } from 'react';
+import { useState } from "react";
 import { useRouter } from 'next/router';
 import Link from 'next/link';
-import api, { setToken, getToken } from '../lib/api';
+import api, { setToken } from '../lib/api';
 
 export default function Login() {
   const router = useRouter();
 
-  useEffect(() => {
-    if (getToken()) window.location.href = '/dashboard';
-  }, []);
   const [form, setForm] = useState({ email: '', password: '' });
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
