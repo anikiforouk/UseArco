@@ -26,7 +26,7 @@ export default function NewProject() {
 
   return (
     <div className="max-w-2xl mx-auto px-6 py-10">
-      <h1 className="text-3xl font-bold text-white mb-2">Post a Project</h1>
+      <h1 className="text-3xl font-bold text-gray-900 mb-2">Post a Project</h1>
       <p className="text-slate-400 mb-8">Tell collaborators what you're building and who you need.</p>
       {error && <div className="bg-red-900/50 border border-red-500 text-red-300 px-4 py-3 rounded-lg mb-4">{error}</div>}
       <form onSubmit={handleSubmit} className="space-y-5">
