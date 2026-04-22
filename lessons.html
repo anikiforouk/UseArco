@@ -1,196 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>useArco · 1‑Minute Lessons</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { 
-            font-family: 'Inter', sans-serif;
-            background: #0f0f0f; 
-            color: #f5f5f5; 
-            min-height: 100vh;
-            line-height: 1.6;
-        }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-        .btn-primary {
-            background: linear-gradient(135deg, #f97316, #ea580c);
-            color: white;
-            border: none;
-            padding: 12px 28px;
-            border-radius: 8px;
-            font-weight: 600;
-            font-size: 16px;
-            cursor: pointer;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-            display: inline-block;
-            text-decoration: none;
-        }
-        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(249, 115, 22, 0.3); }
-        .script-box { 
-            background: #1a1a1a; 
-            border: 1px solid #333; 
-            border-radius: 12px; 
-            padding: 24px; 
-            margin-bottom: 24px;
-            transition: border-color 0.2s ease;
-        }
-        .script-box:hover { border-color: #444; }
-        .topic-badge { 
-            display: inline-block; 
-            padding: 4px 12px; 
-            border-radius: 20px; 
-            font-size: 12px; 
-            font-weight: 600; 
-            margin-right: 8px; 
-            margin-bottom: 12px;
-        }
-        .topic-entrepreneurship { background: rgba(249, 115, 22, 0.15); color: #f97316; border: 1px solid rgba(249, 115, 22, 0.3); }
-        .topic-pm { background: rgba(59, 130, 246, 0.15); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.3); }
-        .hook-badge { background: #333; color: #ccc; padding: 4px 12px; border-radius: 20px; font-size: 12px; }
-        .duration-badge { background: #222; color: #999; padding: 4px 12px; border-radius: 20px; font-size: 12px; }
-        pre { 
-            white-space: pre-wrap; 
-            font-family: 'DM Sans', monospace; 
-            background: #222; 
-            padding: 20px; 
-            border-radius: 8px; 
-            overflow: auto; 
-            color: #ddd; 
-            line-height: 1.5;
-            font-size: 14px;
-        }
-        h1 { font-size: 2.8em; margin-bottom: 16px; line-height: 1.1; }
-        h2 { font-size: 1.8em; margin-bottom: 12px; color: #f5f5f5; }
-        @media (max-width: 768px) {
-            h1 { font-size: 2em; }
-            h2 { font-size: 1.5em; }
-            .script-box { padding: 16px; }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>useArco - Find Your Co-Founder at Your University</title>
+  <meta name="description" content="useArco connects university students to build startups together. Find co-founders, collaborators, and teammates at your school." />
+  <link rel="icon" href="/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <!-- GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-MQF914Z76V"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-MQF914Z76V');</script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; color: #111; background: #fff; -webkit-font-smoothing: antialiased; }
+    a { text-decoration: none; color: inherit; }
+
+    /* NAV */
+    nav { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid #f0f0f0; }
+    .nav-inner { max-width: 1100px; margin: 0 auto; padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { display: flex; align-items: center; gap: 10px; }
+    .nav-logo img { height: 32px; }
+    .nav-links { display: flex; align-items: center; gap: 8px; }
+    .nav-links a { font-size: 14px; font-weight: 500; color: #555; padding: 8px 16px; border-radius: 8px; transition: all 0.15s; }
+    .nav-links a:hover { color: #111; background: #f5f5f5; }
+    .btn-primary { background: #F59E0B; color: #fff !important; font-weight: 600 !important; border-radius: 10px !important; padding: 10px 20px !important; transition: background 0.15s !important; }
+    .btn-primary:hover { background: #D97706 !important; }
+    .btn-outline { border: 1.5px solid #e5e5e5; color: #333 !important; font-weight: 500 !important; border-radius: 10px !important; padding: 9px 18px !important; transition: all 0.15s !important; }
+    .btn-outline:hover { border-color: #F59E0B; color: #D97706 !important; }
+
+    /* HERO */
+    .hero { max-width: 1100px; margin: 0 auto; padding: 96px 24px 80px; text-align: center; }
+    .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: #FEF3C7; color: #92400E; font-size: 13px; font-weight: 600; padding: 6px 14px; border-radius: 100px; border: 1px solid #FDE68A; margin-bottom: 28px; }
+    .hero-badge span { width: 6px; height: 6px; background: #F59E0B; border-radius: 50%; display: inline-block; }
+    .hero h1 { font-size: clamp(40px, 6vw, 72px); font-weight: 900; line-height: 1.08; letter-spacing: -2px; color: #0a0a0a; margin-bottom: 24px; }
+    .hero h1 em { font-style: normal; color: #F59E0B; }
+    .hero p { font-size: clamp(16px, 2vw, 20px); color: #666; max-width: 580px; margin: 0 auto 40px; line-height: 1.6; }
+    .hero-cta { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 64px; }
+    .hero-cta a { font-size: 16px; font-weight: 600; padding: 14px 28px; border-radius: 12px; transition: all 0.15s; display: inline-block; }
+    .cta-main { background: #F59E0B; color: #fff; box-shadow: 0 4px 20px rgba(245,158,11,0.35); }
+    .cta-main:hover { background: #D97706; transform: translateY(-1px); box-shadow: 0 6px 24px rgba(245,158,11,0.4); }
+    .cta-sec { background: #fff; color: #333; border: 1.5px solid #e5e5e5; }
+    .cta-sec:hover { border-color: #F59E0B; color: #D97706; }
+
+    /* STATS */
+    .stats { display: flex; justify-content: center; gap: 48px; flex-wrap: wrap; padding: 32px; background: #FAFAFA; border-radius: 20px; max-width: 700px; margin: 0 auto; }
+    .stat { text-align: center; }
+    .stat-num { font-size: 28px; font-weight: 800; color: #0a0a0a; }
+    .stat-label { font-size: 13px; color: #888; margin-top: 2px; }
+
+    /* SECTION */
+    section { padding: 96px 24px; }
+    .section-inner { max-width: 1100px; margin: 0 auto; }
+    .section-label { font-size: 13px; font-weight: 600; color: #F59E0B; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; }
+    .section-title { font-size: clamp(28px, 4vw, 44px); font-weight: 800; line-height: 1.15; letter-spacing: -1px; color: #0a0a0a; margin-bottom: 16px; }
+    .section-sub { font-size: 18px; color: #666; max-width: 520px; line-height: 1.6; }
+
+    /* HOW IT WORKS */
+    .how { background: #fff; }
+    .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 56px; }
+    .step { text-align: center; padding: 40px 32px; border-radius: 20px; border: 1.5px solid #f0f0f0; transition: all 0.2s; }
+    .step:hover { border-color: #FDE68A; box-shadow: 0 8px 32px rgba(245,158,11,0.08); transform: translateY(-2px); }
+    .step-num { width: 48px; height: 48px; background: #FEF3C7; color: #92400E; border-radius: 14px; font-size: 20px; font-weight: 800; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; }
+    .step h3 { font-size: 18px; font-weight: 700; color: #0a0a0a; margin-bottom: 10px; }
+    .step p { font-size: 14px; color: #777; line-height: 1.6; }
+
+    /* FEATURES */
+    .features { background: #FAFAFA; }
+    .feature-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 56px; }
+    .feature-card { background: #fff; border-radius: 20px; padding: 36px; border: 1.5px solid #f0f0f0; transition: all 0.2s; }
+    .feature-card:hover { border-color: #FDE68A; box-shadow: 0 8px 32px rgba(0,0,0,0.06); }
+    .feature-icon { width: 48px; height: 48px; background: #FEF3C7; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 22px; margin-bottom: 20px; }
+    .feature-card h3 { font-size: 18px; font-weight: 700; color: #0a0a0a; margin-bottom: 8px; }
+    .feature-card p { font-size: 14px; color: #777; line-height: 1.65; }
+    .feature-badge { display: inline-block; margin-top: 12px; font-size: 11px; font-weight: 600; color: #92400E; background: #FEF3C7; padding: 3px 10px; border-radius: 100px; }
+
+    /* UNIVERSITY */
+    .university { background: #0a0a0a; color: #fff; }
+    .university .section-label { color: #F59E0B; }
+    .university .section-title { color: #fff; }
+    .university .section-sub { color: #aaa; }
+    .uni-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 56px; }
+    .uni-card { background: #1a1a1a; border-radius: 20px; padding: 32px; border: 1.5px solid #2a2a2a; }
+    .uni-card h3 { font-size: 16px; font-weight: 700; color: #fff; margin-bottom: 8px; }
+    .uni-card p { font-size: 14px; color: #888; line-height: 1.6; }
+    .uni-card .uni-icon { width: 48px; height: 48px; background: #FEF3C7; border-radius: 14px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
+    .uni-cta { margin-top: 48px; display: flex; gap: 16px; flex-wrap: wrap; }
+    .uni-cta a { font-size: 15px; font-weight: 600; padding: 14px 28px; border-radius: 12px; display: inline-block; transition: all 0.15s; }
+    .uni-cta .u-main { background: #F59E0B; color: #fff; }
+    .uni-cta .u-main:hover { background: #D97706; }
+    .uni-cta .u-sec { border: 1.5px solid #333; color: #ccc; }
+    .uni-cta .u-sec:hover { border-color: #F59E0B; color: #F59E0B; }
+
+    /* CTA SECTION */
+    .cta-section { background: linear-gradient(135deg, #FEF3C7 0%, #fff 60%); text-align: center; }
+    .cta-section .section-title { margin-bottom: 20px; }
+    .cta-section .section-sub { margin: 0 auto 40px; }
+    .cta-big { display: inline-flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
+    .cta-big a { font-size: 16px; font-weight: 600; padding: 16px 32px; border-radius: 14px; transition: all 0.15s; display: inline-block; }
+
+    /* FOOTER */
+    footer { background: #0a0a0a; color: #888; padding: 48px 24px; }
+    .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px; }
+    .footer-logo { display: flex; align-items: center; gap: 10px; }
+    .footer-logo img { height: 28px; opacity: 0.9; filter: brightness(0) invert(1); }
+    .footer-links { display: flex; gap: 24px; }
+    .footer-links a { font-size: 13px; color: #666; transition: color 0.15s; }
+    .footer-links a:hover { color: #F59E0B; }
+    .footer-copy { font-size: 13px; color: #444; }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .steps, .feature-grid, .uni-grid { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+      .stats { gap: 28px; }
+      .hero { padding: 64px 24px 56px; }
+    }
+  </style>
+</head>
+<style>
+  .lessons-container { max-width: 800px; margin: 40px auto; padding: 0 20px; }
+  .lesson-card { background: #fff; border: 1px solid #e5e5e5; border-radius: 12px; padding: 32px; margin-bottom: 24px; }
+  .lesson-topic { background: #FEF3C7; color: #92400E; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; display: inline-block; margin-bottom: 12px; }
+  pre { background: #f5f5f5; border: 1px solid #ddd; border-radius: 8px; padding: 20px; overflow: auto; font-family: 'Courier New', monospace; }
+</style>
 </head>
 <body>
-    <!-- Navigation (same as index.html) -->
-    
-    <!-- Lessons Header -->
-    <section style="padding: 60px 0 40px;">
-        <div class="container">
-            <div style="margin-bottom: 16px;">
-                <span style="background: rgba(249, 115, 22, 0.1); color: #f97316; padding: 8px 16px; border-radius: 20px; font-weight: 600; font-size: 14px; display: inline-block;">
-                    <i class="fas fa-video" style="margin-right: 6px;"></i> TikTok Content Vault
-                </span>
-            </div>
-            <h1 style="font-size: clamp(32px, 5vw, 48px); font-weight: 800; line-height: 1.1; margin-bottom: 16px;">
-                10 Viral Scripts<br>
-                <span style="background: linear-gradient(135deg, #f97316, #ea580c); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Ready to Record</span>
-            </h1>
-            <p style="color: #a1a1aa; font-size: 18px; max-width: 600px; margin-bottom: 40px;">
-                Entrepreneurship · Business · Project Management<br>
-                <span style="color: #666; font-size: 14px;">Read, paraphrase, or riff — make it yours</span>
-            </p>
-        </div>
-    </section>
-
-    <!-- Scripts -->
-    <section style="padding: 0 0 80px;">
-        <div class="container">
-            <!-- Script 1 -->
-            <div class="script-box">
-                <div style="margin-bottom: 16px;">
-                    <span class="topic-badge topic-entrepreneurship">Entrepreneurship</span>
-                    <span class="hook-badge">Pattern Interrupt</span>
-                    <span class="duration-badge">~45 sec</span>
-                </div>
-                <h2>The $0 Business Lesson</h2>
-                <pre>HOOK:
-"Stop trying to validate your business idea. Here's what actually works."
-
-BODY:
-Most founders spend 6 months building something nobody asked for. The move?
-Sell it before you build it.
-
-Pick up the phone. Call 10 people who would be your customer.
-Tell them exactly what you're building and ask them to pay you right now — even just $50.
-
-If nobody pays, you don't have a business. You have a hobby.
-If 3 people pay? You just validated your idea in 48 hours — not 6 months.
-
-CALL TO ACTION:
-This is called pre-selling. It's how the smartest founders de-risk everything.
-Follow for more no-fluff startup tactics from useArco.com.</pre>
-            </div>
-
-            <!-- Script 2 -->
-            <div class="script-box">
-                <div style="margin-bottom: 16px;">
-                    <span class="topic-badge topic-pm">Project Management</span>
-                    <span class="hook-badge">Relatable Pain Point</span>
-                    <span class="duration-badge">~50 sec</span>
-                </div>
-                <h2>Why Your To-Do List Is Lying to You</h2>
-                <pre>HOOK:
-"If you end every day feeling busy but accomplished nothing — this is why."
-
-BODY:
-Your to-do list has 20 items. You knock out 18 of them and still feel like you failed.
-
-That's because you're confusing activity with progress.
-
-Here's the fix: Every morning, write down ONE task — the single thing that, if done, makes everything else easier or irrelevant.
-
-Gary Keller calls it the One Thing. I call it your $10,000 task.
-
-Do that first. Everything else is noise.
-
-CALL TO ACTION:
-The people who build real businesses protect their most important work fiercely.
-Follow useArco.com for more systems that actually move the needle.</pre>
-            </div>
-
-            <!-- More scripts placeholder -->
-            <div style="text-align: center; padding: 40px 0; color: #666;">
-                <h3 style="color: #aaa; margin-bottom: 16px;">8 More Scripts Coming Soon</h3>
-                <p style="color: #777; max-width: 500px; margin: 0 auto;">
-                    The full library includes scripts on pitching, hiring, scope creep, meetings, 
-                    runway management, and more. Check back soon or 
-                    <a href="#waitlist" style="color: #f97316; text-decoration: none;">join the waitlist</a> 
-                    to get notified.
-                </p>
-            </div>
-
-            <!-- CTA -->
-            <div style="text-align: center; margin-top: 60px;">
-                <a href="/" class="btn-primary" style="margin-right: 12px;">
-                    <i class="fas fa-home" style="margin-right: 8px;"></i> Back to Home
-                </a>
-                <a href="#waitlist" class="btn-primary" style="background: transparent; border: 1px solid #333; color: #f5f5f5;">
-                    <i class="fas fa-envelope" style="margin-right: 8px;"></i> Join Waitlist
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer style="border-top: 1px solid #222; padding: 40px 0; color: #666;">
-        <div class="container" style="text-align: center;">
-            <div style="margin-bottom: 20px;">
-                <a href="/" style="color: #f5f5f5; text-decoration: none; font-weight: 700; font-size: 20px;">useArco</a>
-            </div>
-            <div style="display: flex; justify-content: center; gap: 24px; margin-bottom: 24px; flex-wrap: wrap;">
-                <a href="/" style="color: #aaa; text-decoration: none;">Home</a>
-                <a href="/lessons" style="color: #f97316; text-decoration: none; font-weight: 500;">1‑Min Lessons</a>
-                <a href="https://use-arco-platform.vercel.app/login" target="_blank" style="color: #aaa; text-decoration: none;">Platform</a>
-                <a href="https://use-arco-platform.vercel.app/terms" target="_blank" style="color: #aaa; text-decoration: none;">Terms</a>
-                <a href="https://use-arco-platform.vercel.app/privacy" target="_blank" style="color: #aaa; text-decoration: none;">Privacy</a>
-            </div>
-            <p style="font-size: 14px;">
-                © 2026 useArco. Connecting university builders worldwide.
-            </p>
-        </div>
-    </footer>
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo">
+      <img src="/logo.png" alt="useArco" />
+    </div>
+    <div class="nav-links">
+      <a href="#how-it-works">How it works</a>
+      <a href="#features">Features</a>
+      <a href="#universities">Universities</a>
+            <a href="/lessons">1‑Min Lessons</a>
+      <a href="https://use-arco-platform.vercel.app/login" class="btn-outline">Sign in</a>
+      <a href="https://use-arco-platform.vercel.app/register" class="btn-primary">Get started free</a>
+    </div>
+  </div>
+</nav>
+<div class='lessons-container'>
+  <h1 style='font-size: 36px; margin: 40px 0 20px;'>1‑Minute Lessons</h1>
+  <p style='color: #666; margin-bottom: 40px;'>Quick, actionable scripts for entrepreneurs and project managers.</p>
+  <div class='lesson-card'>
+    <span class='lesson-topic'>Entrepreneurship</span>
+    <h2 style='margin: 12px 0;'>The /bin/bash Business Lesson</h2>
+    <pre>HOOK:\n"Stop trying to validate your business idea. Here's what actually works."\n\nBODY:\nMost founders spend 6 months building something nobody asked for. The move?\nSell it before you build it.\n\nPick up the phone. Call 10 people who would be your customer.\nTell them exactly what you're building and ask them to pay you right now — even just 0.\n\nIf nobody pays, you don't have a business. You have a hobby.\nIf 3 people pay? You just validated your idea in 48 hours — not 6 months.\n\nCALL TO ACTION:\nThis is called pre-selling. It's how the smartest founders de-risk everything.\nFollow for more no-fluff startup tactics from useArco.com.</pre>
+  </div>
+  <div class='lesson-card'>
+    <span class='lesson-topic' style='background: #DBEAFE; color: #1E40AF;'>Project Management</span>
+    <h2 style='margin: 12px 0;'>Why Your To-Do List Is Lying to You</h2>
+    <pre>HOOK:\n"If you end every day feeling busy but accomplished nothing — this is why."\n\nBODY:\nYour to-do list has 20 items. You knock out 18 of them and still feel like you failed.\n\nThat's because you're confusing activity with progress.\n\nHere's the fix: Every morning, write down ONE task — the single thing that, if done, makes everything else easier or irrelevant.\n\nGary Keller calls it the One Thing. I call it your 0,000 task.\n\nDo that first. Everything else is noise.\n\nCALL TO ACTION:\nThe people who build real businesses protect their most important work fiercely.\nFollow useArco.com for more systems that actually move the needle.</pre>
+  </div>
+  <div style='text-align: center; margin: 60px 0; color: #888;'>
+    <p>More lessons coming soon. Check back for updates!</p>
+  </div>
+</div>
+<footer style='border-top: 1px solid #f0f0f0; padding: 40px 0; margin-top: 60px; text-align: center; color: #666;'>
+  <div style='max-width: 1100px; margin: 0 auto; padding: 0 24px;'>
+    <p>© 2026 useArco. Connecting university builders worldwide.</p>
+  </div>
+</footer>
 </body>
 </html>
