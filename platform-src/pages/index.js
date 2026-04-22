@@ -223,5 +223,6 @@ export default function Home() {
         </div>
       </div>
     </>
+      <footer className='border-t border-gray-100 mt-16 py-8'>        <div className='max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4'>          <p className='text-sm text-gray-400'>2026 useArco. All rights reserved.</p>          <div className='flex items-center gap-6'>            <a href='/about' className='text-sm text-gray-400 hover:text-amber-600 transition-colors'>About</a>            <a href='/privacy' className='text-sm text-gray-400 hover:text-amber-600 transition-colors'>Privacy Policy</a>            <a href='/terms' className='text-sm text-gray-400 hover:text-amber-600 transition-colors'>Terms of Service</a>            <a href='mailto:hello@usearco.com' className='text-sm text-gray-400 hover:text-amber-600 transition-colors'>Contact</a>          </div>        </div>      </footer>
   );
 }
