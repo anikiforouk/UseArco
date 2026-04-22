@@ -3,11 +3,11 @@ import { useRouter } from 'next/router';
 import api, { getToken } from '../../lib/api';
 
 const CATEGORIES = ['tech', 'real-estate', 'ecommerce', 'saas', 'content', 'other'];
-const STAGES = ['idea', 'mvp', 'launched', 'scaling'];
+const STAGES = ['Idea', 'Prototype', 'MVP', 'Beta', 'Live'];
 
 export default function NewProject() {
   const router = useRouter();
-  const [form, setForm] = useState({ title: '', description: '', category: 'tech', stage: 'idea', skillsNeeded: '', equity: 'Negotiable', compensation: 'Equity only' });
+  const [form, setForm] = useState({ title: '', description: '', category: 'tech', stage: 'Idea', skillsNeeded: '', equityOffered: 'Negotiable', compensation: 'Equity only' });
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
 
@@ -65,7 +65,7 @@ export default function NewProject() {
         <div className="grid grid-cols-2 gap-4">
           <div>
             <label className="text-gray-700 text-sm font-medium mb-2 block">Equity Offer</label>
-            <input className="input" placeholder="e.g. 10-20%" value={form.equity} onChange={e => setForm({...form, equity: e.target.value})} />
+            <input className="input" placeholder="e.g. 10-20%" value={form.equityOffered} onChange={e => setForm({...form, equityOffered: e.target.value})} />
           </div>
           <div>
             <label className="text-gray-700 text-sm font-medium mb-2 block">Compensation</label>
