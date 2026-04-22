@@ -64,9 +64,7 @@ export default function Dashboard() {
       <div className="flex gap-4 mb-8 border-b border-gray-200">
         {['projects', 'applications'].map(t => (
           <button key={t} onClick={() => setTab(t)}
-            className={`pb-3 px-2 font-semibold capitalize transition-colors text-sm ${
-              tab === t ? 'text-amber-600 border-b-2 border-amber-500' : 'text-gray-400 hover:text-gray-700'
-            `}>{t}</button>
+            className={'pb-3 px-2 font-semibold capitalize transition-colors text-sm ' + (tab === t ? 'text-amber-600 border-b-2 border-amber-500' : 'text-gray-400 hover:text-gray-700')}>{t}</button>
         ))}
       </div>
 
@@ -99,11 +97,7 @@ export default function Dashboard() {
                 <p className="font-semibold text-gray-900">{a.project?.title || 'Project'}</p>
                 <p className="text-gray-500 text-sm">{a.project?.category} - {a.project?.stage}</p>
               </div>
-              <span className={`text-sm font-semibold px-3 py-1 rounded-full ${
-                a.status === 'accepted' ? 'bg-green-100 text-green-700' :
-                a.status === 'rejected' ? 'bg-red-100 text-red-700' :
-                'bg-gray-100 text-gray-600'
-              `}>{a.status}</span>
+              <span className={'text-sm font-semibold px-3 py-1 rounded-full ' + (a.status === 'accepted' ? 'bg-green-100 text-green-700' : a.status === 'rejected' ? 'bg-red-100 text-red-700' : 'bg-gray-100 text-gray-600')}>{a.status}</span>
             </div>
           ))}
         </div>
