@@ -9,7 +9,7 @@ export default function App({ Component, pageProps }) {
   useEffect(() => {
     if (getToken()) {
       api.get('/auth/me')
-        .then(res => setUser(res.data))
+        .then(res => setUser(res.data.user || res.data))
         .catch(() => setUser(null));
     }
   }, []);
