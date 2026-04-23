@@ -105,7 +105,7 @@
     footer { background: #0a0a0a; color: #888; padding: 48px 24px; }
     .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px; }
     .footer-logo { display: flex; align-items: center; gap: 10px; }
-    .footer-logo img { height: 28px; opacity: 0.9; filter: brightness(0) invert(1); }
+    .footer-logo img { height: 32px; opacity: 1; }
     .footer-links { display: flex; gap: 24px; }
     .footer-links a { font-size: 13px; color: #666; transition: color 0.15s; }
     .footer-links a:hover { color: #F59E0B; }
@@ -118,6 +118,25 @@
       .stats { gap: 28px; }
       .hero { padding: 64px 24px 56px; }
     }
+
+    /* Mobile hamburger menu */
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; background: none; border: none; }
+    .hamburger span { display: block; width: 22px; height: 2px; background: #1a1a1a; border-radius: 2px; transition: all 0.25s; }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .mobile-menu { display: none; position: absolute; top: 64px; left: 0; right: 0; background: #fff; border-bottom: 1px solid #e5e7eb; box-shadow: 0 8px 24px rgba(0,0,0,0.08); z-index: 999; padding: 16px 24px; flex-direction: column; gap: 4px; }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { font-size: 15px; font-weight: 500; color: #374151; padding: 10px 12px; border-radius: 8px; text-decoration: none; transition: background 0.15s; }
+    .mobile-menu a:hover { background: #FEF3C7; color: #92400E; }
+    .mobile-menu .mobile-cta { background: #F59E0B; color: #fff !important; text-align: center; margin-top: 8px; font-weight: 600; }
+    .mobile-menu .mobile-cta:hover { background: #D97706 !important; }
+    @media (max-width: 768px) {
+      .nav-links { display: none !important; }
+      .nav-cta { display: none !important; }
+      .hamburger { display: flex; }
+      nav { position: relative; }
+    }
   </style>
 </head>
 <body>
@@ -128,7 +147,7 @@
     <div class="nav-logo">
       <img src="/logo.png" alt="useArco" />
     </div>
-    <div class="nav-links">
+    <div class="nav-links" id="nav-links">
       <a href="#how-it-works">How it works</a>
       <a href="#features">Features</a>
       <a href="#universities">Universities</a>
@@ -260,7 +279,7 @@
 <footer>
   <div class="footer-inner">
     <div class="footer-logo">
-      <img src="/usearco_logo.png" alt="useArco" />
+      <img src="/icon_glow_white.png" alt="useArco" />
     </div>
     <div class="footer-links">
       <a href="#how-it-works">How it works</a>
@@ -271,5 +290,21 @@
   </div>
 </footer>
 
+
+<script>
+function toggleMenu() {
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+  hamburger.classList.toggle('open');
+  mobileMenu.classList.toggle('open');
+}
+// Close mobile menu when a link is clicked
+document.querySelectorAll('.mobile-menu a').forEach(function(link) {
+  link.addEventListener('click', function() {
+    document.getElementById('hamburger').classList.remove('open');
+    document.getElementById('mobile-menu').classList.remove('open');
+  });
+});
+</script>
 </body>
 </html>
