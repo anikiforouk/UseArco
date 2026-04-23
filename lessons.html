@@ -3,167 +3,416 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>useArco - Find Your Co-Founder at Your University</title>
-  <meta name="description" content="useArco connects university students to build startups together. Find co-founders, collaborators, and teammates at your school." />
+  <title>1-Min Lessons - useArco</title>
+  <meta name="description" content="10 viral scripts ready to record. Entrepreneurship, business, and project management lessons from useArco." />
   <link rel="icon" href="/favicon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <!-- GA4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-MQF914Z76V"></script>
-  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-MQF914Z76V');</script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-MQF914Z76V");</script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-    body { font-family: 'Inter', sans-serif; color: #111; background: #fff; -webkit-font-smoothing: antialiased; }
+    body { font-family: 'Inter', sans-serif; color: #111; background: #f8f8f6; -webkit-font-smoothing: antialiased; }
     a { text-decoration: none; color: inherit; }
 
-    /* NAV */
-    nav { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid #f0f0f0; }
-    .nav-inner { max-width: 1100px; margin: 0 auto; padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between; }
-    .nav-logo { display: flex; align-items: center; gap: 10px; }
-    .nav-logo img { height: 32px; }
-    .nav-links { display: flex; align-items: center; gap: 8px; }
-    .nav-links a { font-size: 14px; font-weight: 500; color: #555; padding: 8px 16px; border-radius: 8px; transition: all 0.15s; }
-    .nav-links a:hover { color: #111; background: #f5f5f5; }
-    .btn-primary { background: #F59E0B; color: #fff !important; font-weight: 600 !important; border-radius: 10px !important; padding: 10px 20px !important; transition: background 0.15s !important; }
-    .btn-primary:hover { background: #D97706 !important; }
-    .btn-outline { border: 1.5px solid #e5e5e5; color: #333 !important; font-weight: 500 !important; border-radius: 10px !important; padding: 9px 18px !important; transition: all 0.15s !important; }
-    .btn-outline:hover { border-color: #F59E0B; color: #D97706 !important; }
+    /* NAVBAR */
+    .navbar {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid #e5e7eb;
+      padding: 0 24px;
+      height: 64px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 18px; color: #111; }
+    .nav-logo img { height: 32px; width: auto; }
+    .nav-links { display: flex; align-items: center; gap: 28px; }
+    .nav-links a { font-size: 14px; font-weight: 500; color: #555; transition: color 0.2s; }
+    .nav-links a:hover { color: #111; }
+    .nav-links a.active { color: #f97316; font-weight: 600; }
+    .btn-outline { border: 1.5px solid #d1d5db; border-radius: 8px; padding: 7px 16px; font-size: 14px; font-weight: 600; color: #374151 !important; transition: all 0.2s !important; }
+    .btn-outline:hover { border-color: #111 !important; color: #111 !important; }
+    .btn-primary { background: #f97316; color: #fff !important; border-radius: 8px; padding: 7px 16px; font-size: 14px; font-weight: 600; transition: background 0.2s !important; }
+    .btn-primary:hover { background: #ea6c0a !important; }
 
-    /* HERO */
-    .hero { max-width: 1100px; margin: 0 auto; padding: 96px 24px 80px; text-align: center; }
-    .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: #FEF3C7; color: #92400E; font-size: 13px; font-weight: 600; padding: 6px 14px; border-radius: 100px; border: 1px solid #FDE68A; margin-bottom: 28px; }
-    .hero-badge span { width: 6px; height: 6px; background: #F59E0B; border-radius: 50%; display: inline-block; }
-    .hero h1 { font-size: clamp(40px, 6vw, 72px); font-weight: 900; line-height: 1.08; letter-spacing: -2px; color: #0a0a0a; margin-bottom: 24px; }
-    .hero h1 em { font-style: normal; color: #F59E0B; }
-    .hero p { font-size: clamp(16px, 2vw, 20px); color: #666; max-width: 580px; margin: 0 auto 40px; line-height: 1.6; }
-    .hero-cta { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 64px; }
-    .hero-cta a { font-size: 16px; font-weight: 600; padding: 14px 28px; border-radius: 12px; transition: all 0.15s; display: inline-block; }
-    .cta-main { background: #F59E0B; color: #fff; box-shadow: 0 4px 20px rgba(245,158,11,0.35); }
-    .cta-main:hover { background: #D97706; transform: translateY(-1px); box-shadow: 0 6px 24px rgba(245,158,11,0.4); }
-    .cta-sec { background: #fff; color: #333; border: 1.5px solid #e5e5e5; }
-    .cta-sec:hover { border-color: #F59E0B; color: #D97706; }
+    /* MAIN LAYOUT */
+    .page-wrapper { max-width: 960px; margin: 0 auto; padding: 40px 16px 60px; }
 
-    /* STATS */
-    .stats { display: flex; justify-content: center; gap: 48px; flex-wrap: wrap; padding: 32px; background: #FAFAFA; border-radius: 20px; max-width: 700px; margin: 0 auto; }
-    .stat { text-align: center; }
-    .stat-num { font-size: 28px; font-weight: 800; color: #0a0a0a; }
-    .stat-label { font-size: 13px; color: #888; margin-top: 2px; }
+    /* HEADER */
+    .page-header { margin-bottom: 36px; }
+    .tag-row { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+    .tag-brand { background: #f97316; color: #fff; font-size: 12px; font-weight: 700; padding: 4px 10px; border-radius: 5px; letter-spacing: 0.05em; }
+    .tag-sub { color: #888; font-size: 13px; }
+    .page-title { font-family: 'Playfair Display', serif; font-size: clamp(28px, 5vw, 46px); font-weight: 900; line-height: 1.1; letter-spacing: -0.02em; color: #111; margin-bottom: 10px; }
+    .page-title span { color: #f97316; }
+    .page-desc { color: #777; font-size: 15px; }
 
-    /* SECTION */
-    section { padding: 96px 24px; }
-    .section-inner { max-width: 1100px; margin: 0 auto; }
-    .section-label { font-size: 13px; font-weight: 600; color: #F59E0B; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; }
-    .section-title { font-size: clamp(28px, 4vw, 44px); font-weight: 800; line-height: 1.15; letter-spacing: -1px; color: #0a0a0a; margin-bottom: 16px; }
-    .section-sub { font-size: 18px; color: #666; max-width: 520px; line-height: 1.6; }
+    /* GRID */
+    .scripts-grid { display: grid; grid-template-columns: 260px 1fr; gap: 20px; align-items: start; }
+    @media (max-width: 700px) { .scripts-grid { grid-template-columns: 1fr; } .sidebar { display: flex; flex-direction: row; overflow-x: auto; gap: 8px; } .sidebar-btn { min-width: 160px; } }
 
-    /* HOW IT WORKS */
-    .how { background: #fff; }
-    .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 56px; }
-    .step { text-align: center; padding: 40px 32px; border-radius: 20px; border: 1.5px solid #f0f0f0; transition: all 0.2s; }
-    .step:hover { border-color: #FDE68A; box-shadow: 0 8px 32px rgba(245,158,11,0.08); transform: translateY(-2px); }
-    .step-num { width: 48px; height: 48px; background: #FEF3C7; color: #92400E; border-radius: 14px; font-size: 20px; font-weight: 800; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; }
-    .step h3 { font-size: 18px; font-weight: 700; color: #0a0a0a; margin-bottom: 10px; }
-    .step p { font-size: 14px; color: #777; line-height: 1.6; }
+    /* SIDEBAR */
+    .sidebar { display: flex; flex-direction: column; gap: 8px; }
+    .sidebar-btn {
+      background: #fff;
+      border: 1.5px solid #e5e7eb;
+      border-radius: 10px;
+      padding: 12px 14px;
+      cursor: pointer;
+      text-align: left;
+      transition: all 0.15s ease;
+      outline: none;
+      width: 100%;
+    }
+    .sidebar-btn:hover { border-color: #d1d5db; box-shadow: 0 1px 4px rgba(0,0,0,0.06); }
+    .sidebar-btn.active-biz { border-color: #fb923c; background: #fff7ed; }
+    .sidebar-btn.active-pm { border-color: #60a5fa; background: #eff6ff; }
+    .btn-meta { display: flex; align-items: center; gap: 8px; margin-bottom: 5px; }
+    .btn-num { font-size: 11px; font-weight: 700; color: #aaa; min-width: 18px; }
+    .btn-num.active-biz { color: #fb923c; }
+    .btn-num.active-pm { color: #60a5fa; }
+    .btn-badge { font-size: 10px; font-weight: 600; padding: 2px 7px; border-radius: 3px; letter-spacing: 0.04em; text-transform: uppercase; background: #f3f4f6; color: #9ca3af; }
+    .btn-badge.active-biz { background: #fed7aa; color: #9a3412; }
+    .btn-badge.active-pm { background: #bfdbfe; color: #1e3a8a; }
+    .btn-title { font-size: 13px; font-weight: 600; color: #9ca3af; line-height: 1.3; }
+    .btn-title.active { color: #111; }
 
-    /* FEATURES */
-    .features { background: #FAFAFA; }
-    .feature-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 56px; }
-    .feature-card { background: #fff; border-radius: 20px; padding: 36px; border: 1.5px solid #f0f0f0; transition: all 0.2s; }
-    .feature-card:hover { border-color: #FDE68A; box-shadow: 0 8px 32px rgba(0,0,0,0.06); }
-    .feature-icon { width: 48px; height: 48px; background: #FEF3C7; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 22px; margin-bottom: 20px; }
-    .feature-card h3 { font-size: 18px; font-weight: 700; color: #0a0a0a; margin-bottom: 8px; }
-    .feature-card p { font-size: 14px; color: #777; line-height: 1.65; }
-    .feature-badge { display: inline-block; margin-top: 12px; font-size: 11px; font-weight: 600; color: #92400E; background: #FEF3C7; padding: 3px 10px; border-radius: 100px; }
-
-    /* UNIVERSITY */
-    .university { background: #0a0a0a; color: #fff; }
-    .university .section-label { color: #F59E0B; }
-    .university .section-title { color: #fff; }
-    .university .section-sub { color: #aaa; }
-    .uni-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 56px; }
-    .uni-card { background: #1a1a1a; border-radius: 20px; padding: 32px; border: 1.5px solid #2a2a2a; }
-    .uni-card h3 { font-size: 16px; font-weight: 700; color: #fff; margin-bottom: 8px; }
-    .uni-card p { font-size: 14px; color: #888; line-height: 1.6; }
-    .uni-card .uni-icon { width: 48px; height: 48px; background: #FEF3C7; border-radius: 14px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
-    .uni-cta { margin-top: 48px; display: flex; gap: 16px; flex-wrap: wrap; }
-    .uni-cta a { font-size: 15px; font-weight: 600; padding: 14px 28px; border-radius: 12px; display: inline-block; transition: all 0.15s; }
-    .uni-cta .u-main { background: #F59E0B; color: #fff; }
-    .uni-cta .u-main:hover { background: #D97706; }
-    .uni-cta .u-sec { border: 1.5px solid #333; color: #ccc; }
-    .uni-cta .u-sec:hover { border-color: #F59E0B; color: #F59E0B; }
-
-    /* CTA SECTION */
-    .cta-section { background: linear-gradient(135deg, #FEF3C7 0%, #fff 60%); text-align: center; }
-    .cta-section .section-title { margin-bottom: 20px; }
-    .cta-section .section-sub { margin: 0 auto 40px; }
-    .cta-big { display: inline-flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
-    .cta-big a { font-size: 16px; font-weight: 600; padding: 16px 32px; border-radius: 14px; transition: all 0.15s; display: inline-block; }
+    /* SCRIPT PANEL */
+    .script-panel { background: #fff; border: 1.5px solid #e5e7eb; border-radius: 14px; overflow: hidden; box-shadow: 0 1px 8px rgba(0,0,0,0.05); }
+    .panel-top { padding: 18px 22px; border-bottom: 1px solid #f3f4f6; display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 12px; background: #fafafa; }
+    .panel-badges { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 8px; }
+    .badge-topic { font-size: 11px; font-weight: 700; padding: 3px 9px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.05em; }
+    .badge-biz { background: #fed7aa; color: #9a3412; }
+    .badge-pm { background: #bfdbfe; color: #1e3a8a; }
+    .badge-hook { background: #f3f4f6; color: #6b7280; font-size: 11px; font-weight: 600; padding: 3px 9px; border-radius: 4px; }
+    .badge-dur { background: #f3f4f6; color: #9ca3af; font-size: 11px; padding: 3px 9px; border-radius: 4px; }
+    .panel-title { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: #111; letter-spacing: -0.01em; margin: 0; }
+    .copy-btn { background: #f97316; color: #fff; border: none; border-radius: 8px; padding: 9px 18px; font-family: 'Inter', sans-serif; font-weight: 600; font-size: 13px; cursor: pointer; transition: background 0.2s ease; white-space: nowrap; }
+    .copy-btn.copied { background: #16a34a; }
+    .copy-btn:hover { background: #ea6c0a; }
+    .copy-btn.copied:hover { background: #15803d; }
+    .panel-body { padding: 26px 22px; }
+    .panel-body pre { font-family: 'Inter', sans-serif; font-size: 14px; line-height: 1.8; color: #374151; white-space: pre-wrap; word-break: break-word; background: transparent; }
+    .panel-nav { padding: 14px 22px; border-top: 1px solid #f3f4f6; display: flex; justify-content: space-between; align-items: center; background: #fafafa; }
+    .nav-btn { border-radius: 7px; padding: 8px 16px; font-family: 'Inter', sans-serif; font-size: 13px; cursor: pointer; transition: all 0.15s; }
+    .nav-btn-prev { background: #f3f4f6; color: #6b7280; border: 1.5px solid #e5e7eb; }
+    .nav-btn-prev:hover:not(:disabled) { background: #e5e7eb; color: #111; }
+    .nav-btn-next { background: #f97316; color: #fff; border: none; font-weight: 600; }
+    .nav-btn-next:hover:not(:disabled) { background: #ea6c0a; }
+    .nav-btn:disabled { opacity: 0.35; cursor: default; }
+    .nav-counter { font-size: 13px; color: #9ca3af; }
 
     /* FOOTER */
-    footer { background: #0a0a0a; color: #888; padding: 48px 24px; }
-    .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px; }
-    .footer-logo { display: flex; align-items: center; gap: 10px; }
-    .footer-logo img { height: 28px; opacity: 0.9; filter: brightness(0) invert(1); }
-    .footer-links { display: flex; gap: 24px; }
-    .footer-links a { font-size: 13px; color: #666; transition: color 0.15s; }
-    .footer-links a:hover { color: #F59E0B; }
-    .footer-copy { font-size: 13px; color: #444; }
-
-    /* RESPONSIVE */
-    @media (max-width: 768px) {
-      .steps, .feature-grid, .uni-grid { grid-template-columns: 1fr; }
-      .nav-links { display: none; }
-      .stats { gap: 28px; }
-      .hero { padding: 64px 24px 56px; }
-    }
+    .page-footer { max-width: 960px; margin: 28px auto 0; font-size: 12px; color: #bbb; text-align: center; font-family: 'Inter', sans-serif; }
+    .border-biz { border-color: #fb923c !important; }
+    .border-pm { border-color: #60a5fa !important; }
   </style>
 </head>
-<style>
-  .lessons-container { max-width: 800px; margin: 40px auto; padding: 0 20px; }
-  .lesson-card { background: #fff; border: 1px solid #e5e5e5; border-radius: 12px; padding: 32px; margin-bottom: 24px; }
-  .lesson-topic { background: #FEF3C7; color: #92400E; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; display: inline-block; margin-bottom: 12px; }
-  pre { background: #f5f5f5; border: 1px solid #ddd; border-radius: 8px; padding: 20px; overflow: auto; font-family: 'Courier New', monospace; }
-</style>
-</head>
 <body>
-<nav>
-  <div class="nav-inner">
-    <div class="nav-logo">
-      <img src="/logo.png" alt="useArco" />
-    </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <a href="/" class="nav-logo">
+      <img src="/logo.png" alt="useArco" onerror="this.style.display='none'" />
+      useArco
+    </a>
     <div class="nav-links">
-      <a href="#how-it-works">How it works</a>
-      <a href="#features">Features</a>
-      <a href="#universities">Universities</a>
-            <a href="/lessons.html">1‑Min Lessons</a>
+      <a href="/#features">Features</a>
+      <a href="/#universities">Universities</a>
+      <a href="/lessons.html" class="active">1-Min Lessons</a>
       <a href="https://use-arco-platform.vercel.app/login" class="btn-outline">Sign in</a>
       <a href="https://use-arco-platform.vercel.app/register" class="btn-primary">Get started free</a>
     </div>
+  </nav>
+
+  <!-- PAGE CONTENT -->
+  <div class="page-wrapper">
+
+    <!-- HEADER -->
+    <div class="page-header">
+      <div class="tag-row">
+        <span class="tag-brand">useArco.com</span>
+        <span class="tag-sub">TikTok Content Vault</span>
+      </div>
+      <h1 class="page-title">10 Viral Scripts<br><span>Ready to Record</span></h1>
+      <p class="page-desc">Entrepreneurship · Business · Project Management</p>
+    </div>
+
+    <!-- SCRIPTS GRID -->
+    <div class="scripts-grid">
+
+      <!-- SIDEBAR -->
+      <div class="sidebar" id="sidebar"></div>
+
+      <!-- SCRIPT PANEL -->
+      <div class="script-panel" id="scriptPanel">
+        <div class="panel-top">
+          <div>
+            <div class="panel-badges" id="panelBadges"></div>
+            <h2 class="panel-title" id="panelTitle"></h2>
+          </div>
+          <button class="copy-btn" id="copyBtn" onclick="handleCopy()">Copy Script</button>
+        </div>
+        <div class="panel-body"><pre id="panelScript"></pre></div>
+        <div class="panel-nav">
+          <button class="nav-btn nav-btn-prev" id="prevBtn" onclick="navigate(-1)">← Previous</button>
+          <span class="nav-counter" id="navCounter"></span>
+          <button class="nav-btn nav-btn-next" id="nextBtn" onclick="navigate(1)">Next →</button>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="page-footer">useArco.com · Read, paraphrase, or riff - make it yours</div>
   </div>
-</nav>
-<div class='lessons-container'>
-  <h1 style='font-size: 36px; margin: 40px 0 20px;'>1‑Minute Lessons</h1>
-  <p style='color: #666; margin-bottom: 40px;'>Quick, actionable scripts for entrepreneurs and project managers.</p>
-  <div class='lesson-card'>
-    <span class='lesson-topic'>Entrepreneurship</span>
-    <h2 style='margin: 12px 0;'>The /bin/bash Business Lesson</h2>
-    <pre>HOOK:\n"Stop trying to validate your business idea. Here's what actually works."\n\nBODY:\nMost founders spend 6 months building something nobody asked for. The move?\nSell it before you build it.\n\nPick up the phone. Call 10 people who would be your customer.\nTell them exactly what you're building and ask them to pay you right now — even just 0.\n\nIf nobody pays, you don't have a business. You have a hobby.\nIf 3 people pay? You just validated your idea in 48 hours — not 6 months.\n\nCALL TO ACTION:\nThis is called pre-selling. It's how the smartest founders de-risk everything.\nFollow for more no-fluff startup tactics from useArco.com.</pre>
-  </div>
-  <div class='lesson-card'>
-    <span class='lesson-topic' style='background: #DBEAFE; color: #1E40AF;'>Project Management</span>
-    <h2 style='margin: 12px 0;'>Why Your To-Do List Is Lying to You</h2>
-    <pre>HOOK:\n"If you end every day feeling busy but accomplished nothing — this is why."\n\nBODY:\nYour to-do list has 20 items. You knock out 18 of them and still feel like you failed.\n\nThat's because you're confusing activity with progress.\n\nHere's the fix: Every morning, write down ONE task — the single thing that, if done, makes everything else easier or irrelevant.\n\nGary Keller calls it the One Thing. I call it your 0,000 task.\n\nDo that first. Everything else is noise.\n\nCALL TO ACTION:\nThe people who build real businesses protect their most important work fiercely.\nFollow useArco.com for more systems that actually move the needle.</pre>
-  </div>
-  <div style='text-align: center; margin: 60px 0; color: #888;'>
-    <p>More lessons coming soon. Check back for updates!</p>
-  </div>
-</div>
-<footer style='border-top: 1px solid #f0f0f0; padding: 40px 0; margin-top: 60px; text-align: center; color: #666;'>
-  <div style='max-width: 1100px; margin: 0 auto; padding: 0 24px;'>
-    <p>© 2026 useArco. Connecting university builders worldwide.</p>
-  </div>
-</footer>
+
+<script>
+const scripts = [
+  { id:1, title:"The $0 Business Lesson", topic:"Entrepreneurship", hook:"Pattern Interrupt", duration:"~45 sec", script:`HOOK:
+"Stop trying to validate your business idea. Here's what actually works."
+
+BODY:
+Most founders spend 6 months building something nobody asked for. The move?
+Sell it before you build it.
+
+Pick up the phone. Call 10 people who would be your customer.
+Tell them exactly what you're building and ask them to pay you right now - even just $50.
+
+If nobody pays, you don't have a business. You have a hobby.
+If 3 people pay? You just validated your idea in 48 hours - not 6 months.
+
+CALL TO ACTION:
+This is called pre-selling. It's how the smartest founders de-risk everything.
+Follow for more no-fluff startup tactics from useArco.com.` },
+  { id:2, title:"Why Your To-Do List Is Lying to You", topic:"Project Management", hook:"Relatable Pain Point", duration:"~50 sec", script:`HOOK:
+"If you end every day feeling busy but accomplished nothing - this is why."
+
+BODY:
+Your to-do list has 20 items. You knock out 18 of them and still feel like you failed.
+
+That's because you're confusing activity with progress.
+
+Here's the fix: Every morning, write down ONE task - the single thing that, if done, makes everything else easier or irrelevant.
+
+Gary Keller calls it the One Thing. I call it your $10,000 task.
+
+Do that first. Everything else is noise.
+
+CALL TO ACTION:
+The people who build real businesses protect their most important work fiercely.
+Follow useArco.com for more systems that actually move the needle.` },
+  { id:3, title:"The Meeting Nobody Needed", topic:"Project Management", hook:"Bold Claim", duration:"~40 sec", script:`HOOK:
+"Most meetings at your company should be an email. Here's how to tell the difference."
+
+BODY:
+A meeting is for decisions that require real-time back and forth.
+An email is for updates, approvals, and status checks.
+
+If someone schedules a 30-minute meeting to tell you something that could have been three sentences? That's $500 of company time wasted.
+
+The rule: Before scheduling any meeting, write out what outcome you need.
+If you can get that outcome in writing - do it in writing.
+
+CALL TO ACTION:
+Protect your team's deep work time. That's where the real value gets built.
+More project management frameworks at useArco.com - link in bio.` },
+  { id:4, title:"The Founder Trap", topic:"Entrepreneurship", hook:"Curiosity Gap", duration:"~55 sec", script:`HOOK:
+"The thing that makes you a great founder in year one will destroy your business in year three."
+
+BODY:
+In the beginning, doing everything yourself is the move. You have no money, you need to learn the business, and hustle is the only edge you have.
+
+But here's the trap: Most founders never stop.
+
+They keep doing $20-an-hour tasks - answering emails, scheduling calls, managing ops - while their actual job is now $2,000-an-hour strategy and sales.
+
+The shift nobody tells you about: At some point, your job stops being to do the work. It becomes to build the system that does the work.
+
+CALL TO ACTION:
+If you're still the bottleneck in your own business, something has to change.
+Follow useArco.com - we teach you how to build, delegate, and scale.` },
+  { id:5, title:"Why Smart People Stay Broke", topic:"Entrepreneurship", hook:"Bold Claim", duration:"~45 sec", script:`HOOK:
+"The smartest people I know are also the most broke. And it's not a coincidence."
+
+BODY:
+Smart people overthink entry. They see every risk. They want perfect information before they move.
+
+Successful entrepreneurs? They're comfortable being wrong fast.
+
+They launch before they're ready. They get feedback from the market - not from their own head - and they iterate.
+
+The market will tell you what works. But only if you show up.
+
+Intelligence is an asset. Analysis paralysis is a liability.
+
+CALL TO ACTION:
+Done is better than perfect. Ship the thing.
+Follow useArco.com for frameworks that help you move fast and build smart.` },
+  { id:6, title:"The Scope Creep Killer", topic:"Project Management", hook:"Relatable Pain Point", duration:"~50 sec", script:`HOOK:
+"Your project is late. And I already know why - even without seeing it."
+
+BODY:
+Scope creep. Someone said 'hey, while we're at it, can we also add...' - and you said yes.
+
+Then someone else said it. And you said yes again.
+
+Now a 6-week project is 4 months in and still not done.
+
+The fix is simple but uncomfortable: Every new request that wasn't in the original scope goes on a list. It doesn't go into the current project. It goes into the NEXT one.
+
+You protect the deadline. You protect the team. And the requester still gets what they want - just not right now.
+
+CALL TO ACTION:
+This is called a change log. It's one of the most underused tools in business.
+More PM tactics at useArco.com.` },
+  { id:7, title:"The One Slide Every Pitch Needs", topic:"Entrepreneurship", hook:"Curiosity Gap", duration:"~45 sec", script:`HOOK:
+"Investors don't fund ideas. They fund this one thing - and most founders never show it."
+
+BODY:
+It's not your product. Not your market size. Not your team.
+
+It's traction. Evidence that real people want what you're building.
+
+10 paying customers beats a 50-slide deck every single time.
+
+If you don't have revenue yet, show something: waitlist signups, pilot partners, letters of intent, user interviews where someone said 'take my money.'
+
+Investors are pattern matching for one thing: does this market want this product?
+
+Show them the evidence.
+
+CALL TO ACTION:
+Build proof before you pitch. Follow useArco.com for how to get there.` },
+  { id:8, title:"The 10-Minute Weekly Review", topic:"Project Management", hook:"Practical Value", duration:"~50 sec", script:`HOOK:
+"Spend 10 minutes every Friday doing this - and you'll always know exactly where your business stands."
+
+BODY:
+Every Friday, before you close your laptop, answer three questions:
+
+One - What did I ship this week? Not what I worked on. What did I actually complete?
+
+Two - What got stuck, and why? Name the real blocker - not the surface reason.
+
+Three - What is the ONE thing I need to do next week to move the needle most?
+
+That's it. Write it down. 10 minutes.
+
+Over time you'll see patterns. What drains you. What moves you forward. Where time goes.
+
+CALL TO ACTION:
+Clarity compounds. Start this habit this Friday.
+More weekly systems at useArco.com - link in bio.` },
+  { id:9, title:"Hire Slow, Fire Fast Is Wrong", topic:"Entrepreneurship", hook:"Pattern Interrupt", duration:"~50 sec", script:`HOOK:
+'Hire slow, fire fast' is one of the most misunderstood phrases in business. Here's what it actually means."
+
+BODY:
+Hiring slow doesn't mean taking 4 months to make a decision. It means being deliberate - knowing exactly what problem you're solving with this hire before you post the job.
+
+Most founders hire because they're overwhelmed, not because they have a clear role. So they hire the wrong person for the wrong job.
+
+And firing fast doesn't mean being ruthless. It means not letting a bad fit linger for 8 months while it costs money, morale, and momentum.
+
+Be slow with criteria. Be fast with decisions once you have data.
+
+CALL TO ACTION:
+The best teams are built intentionally.
+Follow useArco.com for hiring frameworks that actually work.` },
+  { id:10, title:"The Runway Rule", topic:"Entrepreneurship", hook:"Urgency / Fear", duration:"~45 sec", script:`HOOK:
+"If you can't answer this question right now, your business might be in serious trouble."
+
+BODY:
+How many months until you run out of money?
+
+If you don't know the exact number - that's a problem. Not knowing is how startups die quietly.
+
+The rule: Always have 6 months of runway visible. Not hoped for. Visible - in the bank.
+
+If you're under 6 months, everything else stops. You go into fundraising or revenue mode immediately. No new features. No hiring. No conferences.
+
+Survival first. Growth second.
+
+CALL TO ACTION:
+Build the habit of checking your runway every single month.
+useArco.com - follow for more real talk on building sustainable businesses.` }
+];
+
+let active = 0;
+
+function isPM(topic) { return topic === "Project Management"; }
+
+function renderSidebar() {
+  const sidebar = document.getElementById('sidebar');
+  sidebar.innerHTML = scripts.map((s, i) => {
+    const pm = isPM(s.topic);
+    const isActive = i === active;
+    const activeClass = isActive ? (pm ? 'active-pm' : 'active-biz') : '';
+    return `<button class="sidebar-btn ${activeClass}" onclick="setActive(${i})">
+      <div class="btn-meta">
+        <span class="btn-num ${activeClass}">#${s.id}</span>
+        <span class="btn-badge ${activeClass}">${pm ? 'PM' : 'Biz'}</span>
+      </div>
+      <div class="btn-title ${isActive ? 'active' : ''}">${s.title}</div>
+    </button>`;
+  }).join('');
+}
+
+function renderPanel() {
+  const s = scripts[active];
+  const pm = isPM(s.topic);
+  const topicClass = pm ? 'badge-pm' : 'badge-biz';
+  const borderClass = pm ? 'border-pm' : 'border-biz';
+
+  document.getElementById('panelBadges').innerHTML = `
+    <span class="badge-topic ${topicClass}">${s.topic}</span>
+    <span class="badge-hook">${s.hook}</span>
+    <span class="badge-dur">${s.duration}</span>
+  `;
+  document.getElementById('panelTitle').textContent = s.title;
+  document.getElementById('panelScript').textContent = s.script;
+  document.getElementById('navCounter').textContent = `${active + 1} of ${scripts.length}`;
+  document.getElementById('prevBtn').disabled = active === 0;
+  document.getElementById('nextBtn').disabled = active === scripts.length - 1;
+
+  // Update panel border color
+  const panel = document.getElementById('scriptPanel');
+  panel.classList.remove('border-biz', 'border-pm');
+  panel.classList.add(borderClass);
+
+  // Reset copy button
+  const btn = document.getElementById('copyBtn');
+  btn.textContent = 'Copy Script';
+  btn.classList.remove('copied');
+}
+
+function setActive(i) {
+  active = i;
+  renderSidebar();
+  renderPanel();
+}
+
+function navigate(dir) {
+  const next = active + dir;
+  if (next >= 0 && next < scripts.length) setActive(next);
+}
+
+function handleCopy() {
+  const s = scripts[active];
+  navigator.clipboard.writeText(s.script).then(() => {
+    const btn = document.getElementById('copyBtn');
+    btn.textContent = 'Copied!';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = 'Copy Script'; btn.classList.remove('copied'); }, 2000);
+  });
+}
+
+// Init
+renderSidebar();
+renderPanel();
+</script>
+
 </body>
 </html>
