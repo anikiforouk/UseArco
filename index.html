@@ -137,6 +137,28 @@
       .hamburger { display: flex; }
       nav { position: relative; }
     }
+
+    .contact-section { background: #0a0a0a; padding: 80px 24px; border-top: 1px solid #1a1a1a; }
+    .contact-inner { max-width: 860px; margin: 0 auto; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+    @media (max-width: 700px) { .contact-grid { grid-template-columns: 1fr; gap: 40px; } }
+    .contact-label { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #F59E0B; margin: 0 0 12px 0; }
+    .contact-heading { font-size: 32px; font-weight: 800; color: #fff; margin: 0 0 16px 0; line-height: 1.2; }
+    .contact-desc { color: #888; font-size: 14px; line-height: 1.8; margin: 0 0 28px 0; }
+    .contact-alt { display: flex; align-items: center; gap: 10px; color: #666; font-size: 13px; }
+    .contact-alt a { color: #F59E0B; text-decoration: none; font-weight: 600; }
+    .contact-alt a:hover { text-decoration: underline; }
+    .contact-form { display: flex; flex-direction: column; gap: 14px; }
+    .contact-form input, .contact-form textarea { width: 100%; padding: 12px 16px; background: #111; border: 1px solid #2a2a2a; border-radius: 10px; color: #fff; font-size: 14px; font-family: inherit; outline: none; transition: border-color 0.2s; box-sizing: border-box; }
+    .contact-form input:focus, .contact-form textarea:focus { border-color: #F59E0B; }
+    .contact-form input::placeholder, .contact-form textarea::placeholder { color: #555; }
+    .contact-form textarea { resize: vertical; min-height: 130px; }
+    .contact-form .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    @media (max-width: 480px) { .contact-form .form-row { grid-template-columns: 1fr; } }
+    .contact-submit { padding: 13px 28px; background: #F59E0B; color: #000; border: none; border-radius: 10px; font-size: 14px; font-weight: 700; cursor: pointer; transition: background 0.2s; width: 100%; }
+    .contact-submit:hover { background: #d97706; }
+    .contact-submit:disabled { opacity: 0.6; cursor: not-allowed; }
+    .form-success { background: #052e16; border: 1px solid #16a34a; border-radius: 10px; padding: 16px; color: #4ade80; font-size: 14px; text-align: center; display: none; }
   </style>
 </head>
 <body>
@@ -149,6 +171,7 @@
     </div>
     <div class="nav-links" id="nav-links">
       <a href="#how-it-works">How it works</a>
+          <a href="#contact">Contact</a>
       <a href="#features">Features</a>
       <a href="#universities">Universities</a>
             <a href="/lessons.html">1‑Min Lessons</a>
@@ -276,6 +299,34 @@
 </section>
 
 <!-- FOOTER -->
+
+<section class="contact-section" id="contact">
+  <div class="contact-inner">
+    <div class="contact-grid">
+      <div>
+        <p class="contact-label">Get in Touch</p>
+        <h2 class="contact-heading">Let's Build<br>Something Together</h2>
+        <p class="contact-desc">Interested in bringing useArco to your university, partnering with us, or just want to connect? We'd love to hear from you.</p>
+        <div class="contact-alt">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#F59E0B"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          Or connect on <a href="https://linkedin.com/company/usearco" target="_blank" rel="noreferrer">LinkedIn</a>
+        </div>
+      </div>
+      <div>
+        <form class="contact-form" id="contactForm">
+          <div class="form-row">
+            <input type="text" name="name" placeholder="Your Name" required />
+            <input type="email" name="email" placeholder="Your Email" required />
+          </div>
+          <input type="text" name="subject" placeholder="Subject" required />
+          <textarea name="message" placeholder="Your message..." required></textarea>
+          <button type="submit" class="contact-submit" id="submitBtn">Send Message</button>
+        </form>
+        <div class="form-success" id="formSuccess">Your message has been sent. We will get back to you shortly.</div>
+      </div>
+    </div>
+  </div>
+</section>
 <footer>
   <div class="footer-inner">
     <div class="footer-logo">
@@ -283,6 +334,7 @@
     </div>
     <div class="footer-links">
       <a href="#how-it-works">How it works</a>
+          <a href="#contact">Contact</a>
       <a href="#universities">Universities</a>
       <a href="mailto:hello@usearco.com">Contact</a>
       <a href="/privacy.html">Privacy Policy</a>
@@ -307,6 +359,37 @@ document.querySelectorAll('.mobile-menu a').forEach(function(link) {
     document.getElementById('mobile-menu').classList.remove('open');
   });
 });
+</script>
+
+<script>
+  var contactForm = document.getElementById('contactForm');
+  if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      var btn = document.getElementById('submitBtn');
+      btn.disabled = true;
+      btn.textContent = 'Sending...';
+      var data = new FormData(contactForm);
+      fetch('https://formspree.io/f/anikiforouk@gmail.com', {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      }).then(function(res) {
+        if (res.ok) {
+          contactForm.style.display = 'none';
+          document.getElementById('formSuccess').style.display = 'block';
+        } else {
+          btn.disabled = false;
+          btn.textContent = 'Send Message';
+          alert('Something went wrong. Please try again.');
+        }
+      }).catch(function() {
+        btn.disabled = false;
+        btn.textContent = 'Send Message';
+        alert('Something went wrong. Please try again.');
+      });
+    });
+  }
 </script>
 </body>
 </html>
