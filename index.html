@@ -143,6 +143,23 @@
     .footer-links a { font-size: 13px; color: #64748b; text-decoration: none; transition: color 0.15s; }
     .footer-links a:hover { color: #F59E0B; }
     .footer-copy { font-size: 13px; color: #94a3b8; }
+
+    /* Subscribe Section */
+    .subscribe-section { background: #f0f4ff; padding: 80px 24px; border-top: 1px solid #dde5f4; text-align: center; }
+    .subscribe-inner { max-width: 600px; margin: 0 auto; }
+    .subscribe-eyebrow { font-size: 13px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #F59E0B; margin-bottom: 12px; }
+    .subscribe-heading { font-size: clamp(28px, 5vw, 42px); font-weight: 800; color: #0f172a; margin-bottom: 16px; line-height: 1.2; }
+    .subscribe-sub { font-size: 17px; color: #64748b; margin-bottom: 36px; line-height: 1.6; }
+    .subscribe-form { width: 100%; }
+    .subscribe-input-wrap { display: flex; gap: 12px; max-width: 500px; margin: 0 auto 12px; }
+    .subscribe-input-wrap input { flex: 1; padding: 14px 18px; border: 2px solid #dde5f4; border-radius: 10px; font-size: 15px; color: #0f172a; background: #fff; outline: none; transition: border-color 0.2s; }
+    .subscribe-input-wrap input:focus { border-color: #F59E0B; }
+    .subscribe-input-wrap button { padding: 14px 28px; background: #F59E0B; color: #fff; font-weight: 700; font-size: 15px; border: none; border-radius: 10px; cursor: pointer; white-space: nowrap; transition: background 0.2s, transform 0.1s; }
+    .subscribe-input-wrap button:hover { background: #d97706; transform: translateY(-1px); }
+    .subscribe-input-wrap button:disabled { opacity: 0.7; cursor: not-allowed; transform: none; }
+    .subscribe-privacy { font-size: 13px; color: #94a3b8; }
+    .subscribe-success { display: none; margin-top: 20px; padding: 16px 24px; background: #dcfce7; border: 1px solid #bbf7d0; border-radius: 10px; color: #166534; font-weight: 600; font-size: 15px; }
+    @media (max-width: 480px) { .subscribe-input-wrap { flex-direction: column; } }
   </style>
   <script src="https://www.google.com/recaptcha/api.js?render=6LfazeUsAAAAAIIOUgHEQkqAyCeBoOAR6B8QF83x"></script>
 </head>
@@ -373,7 +390,7 @@
   <a href="#contact" class="btn-primary">Get Early Access</a>
 </section>
 
-<!-- CONTACT -->
+<!-- CONTACT FORM (commented out - restore when needed)
 <section class="contact-section" id="contact">
   <div class="contact-inner">
     <div class="contact-grid">
@@ -382,43 +399,34 @@
         <h2 class="contact-heading">Get in <span class="highlight">touch!</span></h2>
         <p class="contact-sub">Our team is happy to help. We respond within 24 hours.</p>
         <div class="contact-info">
-          <a class="contact-info-link" href="tel:+14849342525">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 12 19.79 19.79 0 0 1 1.08 3.4 2 2 0 0 1 3.05 1.24h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 9.17a16 16 0 0 0 5.82 5.82l1.5-1.26a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16z"/></svg>
-            +1 484 934 2525
-          </a>
-          <a class="contact-info-link" href="mailto:admin@usearco.com">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            admin@usearco.com
-          </a>
-          <a class="contact-info-link" href="https://linkedin.com/company/usearco" target="_blank" rel="noreferrer">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="#F59E0B"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-            LinkedIn
-          </a>
+          <a class="contact-info-link" href="tel:+14849342525">+1 484 934 2525</a>
+          <a class="contact-info-link" href="mailto:admin@usearco.com">admin@usearco.com</a>
         </div>
       </div>
       <div>
         <form class="contact-form" id="contactForm">
-          <div class="input-div">
-            <input class="input" id="c-name" type="text" name="name" placeholder=" " required />
-            <label class="label" for="c-name">Your name *</label>
-          </div>
-          <div class="input-div">
-            <input class="input" id="c-email" type="email" name="email" placeholder=" " required />
-            <label class="label" for="c-email">Your email *</label>
-          </div>
-          <div class="input-div">
-            <input class="input" id="c-phone" type="text" name="phone" placeholder=" " />
-            <label class="label" for="c-phone">Your phone number</label>
-          </div>
-          <div class="input-div">
-            <textarea class="input" id="c-msg" name="message" placeholder=" " required></textarea>
-            <label class="label" for="c-msg">Your message *</label>
-          </div>
-          <button type="submit" class="contact-submit" id="submitBtn">Send Message</button>
+          name, email, phone, message fields here
         </form>
-        <div class="form-success" id="formSuccess">&#10003; Message sent! We will get back to you shortly.</div>
       </div>
     </div>
+  </div>
+</section>
+END CONTACT FORM -->
+
+<!-- EARLY ACCESS SUBSCRIBE -->
+<section class="subscribe-section" id="contact">
+  <div class="subscribe-inner">
+    <p class="subscribe-eyebrow">Be First In Line</p>
+    <h2 class="subscribe-heading">Get <span class="highlight">Early Access</span></h2>
+    <p class="subscribe-sub">Join real estate investors already on the waitlist. We\&#x27;ll notify you the moment we launch.</p>
+    <form class="subscribe-form" id="subscribeForm">
+      <div class="subscribe-input-wrap">
+        <input type="email" id="sub-email" name="email" placeholder="Enter your email address" required />
+        <button type="submit" id="subBtn">Join Waitlist</button>
+      </div>
+      <p class="subscribe-privacy">No spam. Unsubscribe anytime.</p>
+    </form>
+    <div class="subscribe-success" id="subSuccess">&#10003; You\&#x27;re on the list! We\&#x27;ll be in touch soon.</div>
   </div>
 </section>
 
@@ -446,46 +454,44 @@
     document.getElementById('tab-' + name).classList.add('active');
     event.target.classList.add('active');
   }
-  var contactForm = document.getElementById('contactForm');
-  if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
+</script>
+
+<script>
+  // CONTACT FORM JS (commented out - restore when needed)
+  // var contactForm = document.getElementById('contactForm');
+  // if (contactForm) { contactForm.addEventListener('submit', function(e) { ... }); }
+
+  // SUBSCRIBE FORM JS
+  var subscribeForm = document.getElementById('subscribeForm');
+  if (subscribeForm) {
+    subscribeForm.addEventListener('submit', function(e) {
       e.preventDefault();
-      var btn = document.getElementById('submitBtn');
+      var btn = document.getElementById('subBtn');
+      var email = document.getElementById('sub-email').value;
       btn.disabled = true;
-      btn.textContent = 'Sending...';
-      var data = new FormData(contactForm);
-      grecaptcha.ready(function() {
-        grecaptcha.execute('6LfazeUsAAAAAIIOUgHEQkqAyCeBoOAR6B8QF83x', {action: 'contact'}).then(function(token) {
-          fetch('https://api.usearco.com/api/contact', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-            body: JSON.stringify({
-              name: data.get('name'),
-              email: data.get('email'),
-              phone: data.get('phone'),
-              subject: 'Contact Form',
-              message: data.get('message'),
-              recaptchaToken: token
-            })
-          }).then(function(res) { return res.json(); }).then(function(json) {
-            if (json.success) {
-              contactForm.style.display = 'none';
-              document.getElementById('formSuccess').style.display = 'block';
-            } else {
-              btn.disabled = false;
-              btn.textContent = 'Send Message';
-              alert(json.message || 'Something went wrong. Please try again.');
-            }
-          }).catch(function() {
-            btn.disabled = false;
-            btn.textContent = 'Send Message';
-            alert('Something went wrong. Please try again.');
-          });
-        });
+      btn.textContent = 'Joining...';
+      fetch('https://api.usearco.com/api/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: email })
+      }).then(function(res) { return res.json(); }).then(function(json) {
+        if (json.success) {
+          subscribeForm.style.display = 'none';
+          document.getElementById('subSuccess').style.display = 'block';
+        } else {
+          btn.disabled = false;
+          btn.textContent = 'Join Waitlist';
+          alert(json.message || 'Something went wrong. Please try again.');
+        }
+      }).catch(function() {
+        btn.disabled = false;
+        btn.textContent = 'Join Waitlist';
+        alert('Something went wrong. Please try again.');
       });
     });
   }
 </script>
+
 
 </body>
 </html>
