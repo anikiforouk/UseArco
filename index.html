@@ -144,7 +144,7 @@
     .footer-links a:hover { color: #F59E0B; }
     .footer-copy { font-size: 13px; color: #94a3b8; }
   </style>
-  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <script src="https://www.google.com/recaptcha/api.js?render=6LfazeUsAAAAAIIOUgHEQkqAyCeBoOAR6B8QF83x"></script>
 </head>
 <body>
 
@@ -414,7 +414,6 @@
             <textarea class="input" id="c-msg" name="message" placeholder=" " required></textarea>
             <label class="label" for="c-msg">Your message *</label>
           </div>
-          <div class="g-recaptcha" data-sitekey="6LfazeUsAAAAAIIOUgHEQkqAyCeBoOAR6B8QF83x" style="margin-bottom:4px;"></div>
           <button type="submit" class="contact-submit" id="submitBtn">Send Message</button>
         </form>
         <div class="form-success" id="formSuccess">&#10003; Message sent! We will get back to you shortly.</div>
@@ -452,40 +451,37 @@
     contactForm.addEventListener('submit', function(e) {
       e.preventDefault();
       var btn = document.getElementById('submitBtn');
-      var token = grecaptcha.getResponse();
-      if (!token) {
-        alert('Please complete the CAPTCHA before sending.');
-        return;
-      }
       btn.disabled = true;
       btn.textContent = 'Sending...';
       var data = new FormData(contactForm);
-      fetch('https://api.usearco.com/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify({
-          name: data.get('name'),
-          email: data.get('email'),
-          phone: data.get('phone'),
-          subject: 'Contact Form',
-          message: data.get('message'),
-          recaptchaToken: token
-        })
-      }).then(function(res) { return res.json(); }).then(function(json) {
-        if (json.success) {
-          contactForm.style.display = 'none';
-          document.getElementById('formSuccess').style.display = 'block';
-        } else {
-          btn.disabled = false;
-          btn.textContent = 'Send Message';
-          grecaptcha.reset();
-          alert(json.message || 'Something went wrong. Please try again.');
-        }
-      }).catch(function() {
-        btn.disabled = false;
-        btn.textContent = 'Send Message';
-        grecaptcha.reset();
-        alert('Something went wrong. Please try again.');
+      grecaptcha.ready(function() {
+        grecaptcha.execute('6LfazeUsAAAAAIIOUgHEQkqAyCeBoOAR6B8QF83x', {action: 'contact'}).then(function(token) {
+          fetch('https://api.usearco.com/api/contact', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+            body: JSON.stringify({
+              name: data.get('name'),
+              email: data.get('email'),
+              phone: data.get('phone'),
+              subject: 'Contact Form',
+              message: data.get('message'),
+              recaptchaToken: token
+            })
+          }).then(function(res) { return res.json(); }).then(function(json) {
+            if (json.success) {
+              contactForm.style.display = 'none';
+              document.getElementById('formSuccess').style.display = 'block';
+            } else {
+              btn.disabled = false;
+              btn.textContent = 'Send Message';
+              alert(json.message || 'Something went wrong. Please try again.');
+            }
+          }).catch(function() {
+            btn.disabled = false;
+            btn.textContent = 'Send Message';
+            alert('Something went wrong. Please try again.');
+          });
+        });
       });
     });
   }
